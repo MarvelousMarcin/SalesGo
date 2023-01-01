@@ -1,9 +1,9 @@
-import Logo from "../../atomic/Logo";
+import Nav from "./Nav";
 
 const Dashboard = () => {
   return (
-    <section className="w-screen h-screen bg-[#F7F7F7] relative">
-      <Logo />
+    <section className="w-screen h-screen bg-[#F7F7F7]">
+      <Nav />
     </section>
   );
 };

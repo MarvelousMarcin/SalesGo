@@ -25,6 +25,12 @@ export const authSlice = createSlice({
     setIsLogged: (state, action) => {
       state.isLogged = action.payload;
     },
+    logOut: (state, action) => {
+      state.isLogged = false;
+      state.token = "";
+      const cookies = new Cookies();
+      cookies.remove("token");
+    },
   },
 });
 

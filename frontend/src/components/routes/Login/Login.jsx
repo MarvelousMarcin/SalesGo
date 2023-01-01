@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <section className="w-screen h-screen flex flex-row">
       <article className="w-[50vw] relative flex items-center justify-center">
-        <Logo />
+        <Logo isFixed={true} />
         <LoginForm />
       </article>
       <article className="w-[50vw] bg-[#023E8A] flex items-center justify-center">
