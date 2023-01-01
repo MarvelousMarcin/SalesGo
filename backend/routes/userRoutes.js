@@ -7,10 +7,18 @@ const User = require("../model/User");
 userRouter.post("/newuser", async (req, res) => {
   const { id } = req.body;
 
+  if (!id) {
+    return res.status(400).send({ error: "Empty input!" });
+  }
+
+  if (id.length > 8) {
+    return res.status(400).send({ error: "Too long id" });
+  }
+
   const foundUser = await User.findOne({ id });
 
   if (foundUser) {
-    return res.status(400).send({ error: "User already exists" });
+    return res.status(400).send({ error: "User already exists!" });
   }
 
   const user = new User({ id });

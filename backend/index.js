@@ -1,10 +1,17 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
-require("dotenv").config();
-mongoose.connect(process.env.MONGODB_URL);
 const app = express();
-app.use(express.json());
 const PORT = process.env.PORT || 4000;
+
+require("dotenv").config();
+
+mongoose.connect(process.env.MONGODB_URL);
+
+app.disable("x-powered-by");
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const userRoutes = require("./routes/userRoutes");
 
