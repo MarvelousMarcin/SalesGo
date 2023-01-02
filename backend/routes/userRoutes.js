@@ -1,6 +1,7 @@
 const express = require("express");
 const userRouter = express.Router();
 const jwt = require("jsonwebtoken");
+const auth = require("../utils/verifyToken");
 
 const User = require("../model/User");
 
@@ -40,6 +41,10 @@ userRouter.post("/login", async (req, res) => {
   const token = jwt.sign({ id }, process.env.JWT_TOKEN);
 
   res.send({ token });
+});
+
+userRouter.post("/user_data", auth, (req, res) => {
+  res.send(req.user);
 });
 
 module.exports = userRouter;

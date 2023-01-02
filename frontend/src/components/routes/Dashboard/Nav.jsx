@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 const Nav = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const userId = useSelector((state) => state.auth.userId);
 
   const logOutHandler = () => {
     dispatch(actions.logOut());
@@ -20,9 +21,9 @@ const Nav = () => {
     <nav className="flex flex-row h-[12vh] w-[100vw] justify-between items-center px-[2rem]">
       <Logo />
       <section className="flex flex-row w-[40%] justify-evenly items-center">
-        <article className="text-md">Logged as: John68</article>
-        <img className="w-[3rem] cursor-pointer" src={polandFot} />
-        <img className="w-[3rem] cursor-pointer" src={lightFot} />
+        <article className="text-md">Logged as: {userId}</article>
+        <img className="w-[2rem] cursor-pointer" src={polandFot} />
+        <img className="w-[2rem] cursor-pointer" src={lightFot} />
         <article
           onClick={logOutHandler}
           className="flex flex-row items-center justify-center cursor-pointer"

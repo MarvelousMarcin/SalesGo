@@ -6,9 +6,9 @@ const getCookieOnInit = () => {
   const token = cookies.get("token");
 
   if (token) {
-    return { token, isLogged: true };
+    return { token, userId: "test", isLogged: true };
   } else {
-    return { token, isLogged: false };
+    return { token, userId: null, isLogged: false };
   }
 };
 
@@ -25,7 +25,10 @@ export const authSlice = createSlice({
     setIsLogged: (state, action) => {
       state.isLogged = action.payload;
     },
-    logOut: (state, action) => {
+    setUserId: (state, action) => {
+      state.userId = action.payload;
+    },
+    logOut: (state) => {
       state.isLogged = false;
       state.token = "";
       const cookies = new Cookies();
@@ -35,7 +38,7 @@ export const authSlice = createSlice({
 });
 
 export const login = (id) => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     const response = await fetch("http://localhost:4000/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -46,6 +49,7 @@ export const login = (id) => {
     if (response.ok) {
       dispatch(authSlice.actions.setToken(data.token));
       dispatch(authSlice.actions.setIsLogged(true));
+      dispatch(authSlice.actions.setUserId(id));
 
       return true;
     }

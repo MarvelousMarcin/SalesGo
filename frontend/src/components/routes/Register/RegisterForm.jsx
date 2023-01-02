@@ -15,10 +15,7 @@ const RegisterForm = () => {
   const submitRegisterHandler = async (e) => {
     e.preventDefault();
     const error = await dispatch(register(id));
-
-    if (!error) return navigate("/login");
-    setId("");
-
+    if (!error) return navigate("/");
     setErrorMsg(error);
   };
 
