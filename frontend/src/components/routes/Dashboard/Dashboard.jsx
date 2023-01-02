@@ -3,9 +3,10 @@ import OrderWidget from "./OrdersWidget/OrdersWidget";
 import QualityWidget from "./QualityWidget/QualityWidget";
 import ReviewWidget from "./ReviewWidget/ReviewWidget";
 import manFot from "../../../assets/man-comp.png";
+import AdviceWidget from "./AdviceWidget/AdviceWidget";
 const Dashboard = () => {
   return (
-    <section className="w-screen h-[100vh] bg-[#F7F7F7]">
+    <section className="w-screen h-[200vh] bg-[#F7F7F7]">
       <Nav />
       <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw]">
         <OrderWidget />
@@ -17,6 +18,7 @@ const Dashboard = () => {
           <img className="" src={manFot} />
         </div>
       </article>
+      <AdviceWidget />
     </section>
   );
 };
