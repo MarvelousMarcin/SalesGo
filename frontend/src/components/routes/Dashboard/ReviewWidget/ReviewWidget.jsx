@@ -5,14 +5,17 @@ import Review from "../../../atomic/Review";
 
 const ReviewWidget = () => {
   return (
-    <section className="w-[60%] bg-[white] rounded-md p-[2rem]">
+    <section className="w-[100%] bg-[white] rounded-md p-[2rem] dark:bg-[#242526] dark:text-[white] md:w-[60%]">
       <article className="flex items-center mb-[2rem]">
-        <h1 className="text-3xl font-bold mr-[2rem]">Review</h1>
+        <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
+          Review
+        </h1>
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <Select
             defaultValue={10}
             labelId="demo-select-small"
             id="demo-select-small"
+            className="dark:text-[white] border-[white] border-[2px]"
           >
             <MenuItem value={10}>All</MenuItem>
             <MenuItem value={20}>Positive</MenuItem>

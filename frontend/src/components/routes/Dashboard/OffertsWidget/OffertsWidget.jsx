@@ -23,17 +23,25 @@ const rows = [
 
 const OffertsWidget = () => {
   return (
-    <section className="w-[98vw] rounded-md p-[2rem] h-[35rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white]">
+    <section className="w-[98vw] rounded-md p-[2rem] h-[35rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white] dark:bg-[#242526]">
       <article className="flex flex-row items-center">
-        <h1 className="text-3xl font-bold mr-[2rem]">Offerts</h1>
-        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+        <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
+          Offerts
+        </h1>
+        <FormControl
+          sx={{ m: 1, minWidth: 120, color: "#242526" }}
+          size="small"
+        >
           <Select
             defaultValue={10}
-            labelId="demo-select-small"
-            id="demo-select-small"
+            className="dark:text-[white] border-[white] border-[2px]"
           >
-            <MenuItem value={10}>Most Popular</MenuItem>
-            <MenuItem value={20}>Least Popular</MenuItem>
+            <MenuItem value={10}>
+              <span>Most Popular</span>
+            </MenuItem>
+            <MenuItem value={20}>
+              <span>Least Popular</span>
+            </MenuItem>
           </Select>
         </FormControl>
       </article>
@@ -65,13 +73,38 @@ const OffertsWidget = () => {
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row" align="center">
+                  <TableCell
+                    className="dark:bg-[#242526] dark:text-[white]"
+                    component="th"
+                    scope="row"
+                    align="center"
+                  >
                     {row.name}
                   </TableCell>
-                  <TableCell align="center">{row.calories}</TableCell>
-                  <TableCell align="center">{row.fat}</TableCell>
-                  <TableCell align="center">{row.carbs}</TableCell>
-                  <TableCell align="center">{row.protein}</TableCell>
+                  <TableCell
+                    className="dark:bg-[#242526] dark:text-[white]"
+                    align="center"
+                  >
+                    {row.calories}
+                  </TableCell>
+                  <TableCell
+                    className="dark:bg-[#242526] dark:text-[white]"
+                    align="center"
+                  >
+                    {row.fat}
+                  </TableCell>
+                  <TableCell
+                    className="dark:bg-[#242526] dark:text-[white]"
+                    align="center"
+                  >
+                    {row.carbs}
+                  </TableCell>
+                  <TableCell
+                    className="dark:bg-[#242526] dark:text-[white]"
+                    align="center"
+                  >
+                    {row.protein}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

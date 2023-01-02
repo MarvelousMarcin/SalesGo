@@ -3,7 +3,7 @@ import moneyFot from "../../assets/money.png";
 const Logo = ({ isFixed = "" }) => {
   return (
     <div
-      className={`text-3xl text-[#2C2727] flex items-center justify-center ${
+      className={`text-3xl text-[#2C2727] flex items-center justify-center dark:text-[white] ${
         isFixed ? "fixed" : ""
       } top-10 left-10`}
     >

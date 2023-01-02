@@ -21,9 +21,9 @@ const Review = ({ name, score, comment = "" }) => {
   };
 
   return (
-    <section className="flex flex-row items-center justify-between mb-[1rem]">
+    <section className="flex flex-row items-center justify-between mb-[1rem] flex-wrap md:flex-nowrap">
       <div>
-        <h2 className="text-lg">{name}</h2>
+        <h2 className=" font-bold text-xl md:text-lg md:font-normal">{name}</h2>
         <section className="flex flex-row">{starObj[score]}</section>
       </div>
       <h2 className="w-[25rem]">{comment}</h2>
