@@ -87,9 +87,9 @@ const Nav = () => {
   return (
     <nav className="flex flex-row h-[12vh] w-[100vw] justify-between items-center px-[2rem]">
       <Logo />
-      <section className="flex flex-row w-[40%] justify-evenly items-center">
-        <article className="text-md dark:text-[white]">
-          Logged as: {userId}
+      <section className="flex flex-row w-[30%] justify-evenly items-center">
+        <article className="text-md dark:text-[white] ">
+          Logged as: <span className="font-bold text-xl">{userId}</span>
         </article>
         <img alt="fot" className="w-[2rem] cursor-pointer" src={polandFot} />
         <FormControlLabel

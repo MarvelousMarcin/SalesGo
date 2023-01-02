@@ -33,7 +33,11 @@ const ReviewWidget = () => {
         />
 
         <Review score={2} name={"Marcin"} comment={"Horrible!!"} />
-        <Review score={3} name={"Janusz Kowalski"} />
+        <Review
+          score={3}
+          name={"Janusz Kowalski"}
+          comment={"It was just okay!!"}
+        />
         <Review
           score={4}
           name={"Frank"}
