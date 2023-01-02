@@ -2,21 +2,25 @@ import star from "../../assets/star.png";
 
 const Review = ({ name, score, comment = "" }) => {
   const starObj = {
-    1: [<img src={star} />],
-    2: [<img src={star} />, <img src={star} />],
-    3: [<img src={star} />, <img src={star} />, <img src={star} />],
+    1: [<img alt="start" src={star} />],
+    2: [<img alt="start" src={star} />, <img alt="fot" src={star} />],
+    3: [
+      <img alt="start" src={star} />,
+      <img alt="fot" src={star} />,
+      <img alt="fot" src={star} />,
+    ],
     4: [
-      <img src={star} />,
-      <img src={star} />,
-      <img src={star} />,
-      <img src={star} />,
+      <img alt="start" src={star} />,
+      <img alt="start" src={star} />,
+      <img alt="start" src={star} />,
+      <img alt="start" src={star} />,
     ],
     5: [
-      <img src={star} />,
-      <img src={star} />,
-      <img src={star} />,
-      <img src={star} />,
-      <img src={star} />,
+      <img alt="start" src={star} />,
+      <img alt="start" src={star} />,
+      <img alt="start" src={star} />,
+      <img alt="start" src={star} />,
+      <img alt="start" src={star} />,
     ],
   };
 

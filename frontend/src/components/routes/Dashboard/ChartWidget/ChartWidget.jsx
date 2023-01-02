@@ -93,6 +93,7 @@ const ChartWidget = () => {
             }
           >
             <img
+              alt="fot"
               className="w-[2rem]  cursor-pointer"
               src={isDarkMode ? barWhite : bar}
               onClick={() => {
@@ -107,6 +108,7 @@ const ChartWidget = () => {
             }
           >
             <img
+              alt="fot"
               className="w-[2rem] cursor-pointer"
               src={isDarkMode ? lineWhite : line}
               onClick={() => {

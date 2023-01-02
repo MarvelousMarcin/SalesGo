@@ -19,7 +19,7 @@ const Dashboard = () => {
       <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] mr-[1vw] mt-[1rem] flex-wrap md:flex-nowrap">
         <ReviewWidget />
         <div className="bg-[white] rounded-md w-[40%]  flex justify-center items-center dark:bg-[#242526]">
-          <img className="" src={manFot} />
+          <img alt="fot" className="" src={manFot} />
         </div>
       </article>
       <ChartWidget />

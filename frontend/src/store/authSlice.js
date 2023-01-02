@@ -6,7 +6,7 @@ const getCookieOnInit = () => {
   const token = cookies.get("token");
 
   if (token) {
-    return { token, userId: "test", isLogged: true };
+    return { token, userId: "", isLogged: true };
   } else {
     return { token, userId: null, isLogged: false };
   }

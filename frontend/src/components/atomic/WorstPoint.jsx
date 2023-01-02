@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const WorstPoint = ({ caption, score, maxScore }) => {
   const countSize = (score / 10) * 15;
 

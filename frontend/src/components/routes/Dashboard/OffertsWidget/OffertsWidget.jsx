@@ -63,7 +63,7 @@ const OffertsWidget = () => {
                   <h1 className="font-bold text-[white]">Cycle</h1>
                 </TableCell>
                 <TableCell className="bg-[#023E8A] " align="center">
-                  <h1 className="font-bold text-[white]"></h1>
+                  <div className="font-bold text-[white]"></div>
                 </TableCell>
               </TableRow>
             </TableHead>
