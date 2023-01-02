@@ -1,8 +1,8 @@
-import Circle from "../../atomic/Circle";
-import WorstPoint from "../../atomic/WorstPoint";
+import Circle from "../../../atomic/Circle";
+import WorstPoint from "../../../atomic/WorstPoint";
 const QualityWidget = () => {
   return (
-    <section className="bg-[white] w-[60%] p-6 m-5 rounded-md ">
+    <section className="bg-[white] w-[65%] rounded-md p-[2rem]">
       <h1 className="text-3xl font-bold">Quality</h1>
       <section className="flex flex-row items-center justify-center gap-[6rem]">
         <Circle grade={8.3} caption={"Excellent"} />
