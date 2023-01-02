@@ -5,7 +5,7 @@ import Review from "../../../atomic/Review";
 
 const ReviewWidget = () => {
   return (
-    <section className="w-[100%] bg-[white] rounded-md p-[2rem] dark:bg-[#242526] dark:text-[white] md:w-[60%]">
+    <section className="w-[100%]  bg-[white] rounded-md p-[2rem] dark:bg-[#242526] dark:text-[white] md:w-[60%]">
       <article className="flex items-center mb-[2rem]">
         <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
           Review
@@ -23,7 +23,7 @@ const ReviewWidget = () => {
           </Select>
         </FormControl>
       </article>
-      <article className="flex flex-col">
+      <article className="flex flex-col h-[50rem] justify-evenly md:justify-center md:h-[30rem]">
         <Review
           score={5}
           name={"John snow"}
