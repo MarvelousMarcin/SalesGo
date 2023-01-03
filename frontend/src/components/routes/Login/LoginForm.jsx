@@ -4,16 +4,22 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../../store/authSlice";
+import { motion } from "framer-motion";
 
 const LoginForm = () => {
   const [id, setId] = useState("");
+  const [errMsg, setErrMsg] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const submitLoginHandler = async (e) => {
     e.preventDefault();
-    const test = dispatch(login(id));
-    if (test) navigate("/dashboard");
+    const data = await dispatch(login(id));
+    if (data.token) {
+      navigate("/dashboard");
+    } else {
+      setErrMsg(data.error);
+    }
   };
 
   return (
@@ -36,7 +42,8 @@ const LoginForm = () => {
           placeholder="Enter your salesman id"
         />
       </article>
-      <Button caption={"Enter"} />
+      <div className="min-h-[2rem] text-center text-[red]">{errMsg}</div>
+      <Button caption={"Enter"} register={true} errorMsg={errMsg} />
       <h3>
         Don't have salesman id?
         <span className="font-bold text-[#023E8A]">

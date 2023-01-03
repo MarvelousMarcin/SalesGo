@@ -39,21 +39,22 @@ export const authSlice = createSlice({
 
 export const login = (id) => {
   return async (dispatch) => {
+    if (!id) {
+      return { error: "Empty input" };
+    }
+
     const response = await fetch("http://localhost:4000/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id }),
     });
     const data = await response.json();
-
     if (response.ok) {
       dispatch(authSlice.actions.setToken(data.token));
       dispatch(authSlice.actions.setIsLogged(true));
       dispatch(authSlice.actions.setUserId(id));
-
-      return true;
     }
-    return false;
+    return data;
   };
 };
 

@@ -10,6 +10,9 @@ import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { useEffect } from "react";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -66,6 +69,7 @@ const Nav = () => {
   const token = useSelector((state) => state.auth.token);
   const logOutHandler = () => {
     dispatch(actions.logOut());
+    dispatch(actionsDarkMode.setLightMode());
     navigate("/");
   };
 
@@ -87,7 +91,27 @@ const Nav = () => {
   return (
     <nav className="flex flex-row h-[12vh] w-[100vw] justify-between items-center px-[2rem]">
       <Logo />
-      <section className="flex flex-row w-[30%] justify-evenly items-center">
+      <section className="flex flex-row w-[60%] justify-evenly items-center">
+        <article className="flex flex-row items-center justify-center">
+          <h2 className="text-[#2C2727] dark:text-[white]">Choose shop:</h2>
+          <FormControl
+            sx={{ m: 1, minWidth: 120, color: "#242526" }}
+            size="small"
+          >
+            <Select
+              defaultValue={10}
+              className="dark:text-[white] border-[white] border-[2px]"
+            >
+              <MenuItem value={10}>
+                <span>Allegro</span>
+              </MenuItem>
+
+              <MenuItem value={20}>
+                <span>Amazon</span>
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </article>
         <article className="text-md dark:text-[white] ">
           Logged as: <span className="font-bold text-xl">{userId}</span>
         </article>

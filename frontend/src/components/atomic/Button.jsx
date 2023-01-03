@@ -5,7 +5,7 @@ const Button = ({ caption, className, errorMsg = "", register = false }) => {
     <>
       {register && (
         <motion.button
-          animate={{ y: errorMsg ? 5 : -30 }}
+          animate={{ y: errorMsg ? -5 : -30 }}
           className={`bg-[#023E8A] text-[white] h-14 font-bold text-xl ${className}`}
         >
           {caption}
