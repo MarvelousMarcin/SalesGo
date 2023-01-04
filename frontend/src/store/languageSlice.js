@@ -44,16 +44,28 @@ const dictionary = {
   Excellent: { PLK: "Wspaniale", ENU: "Excellent" },
 };
 
+const initState = () => {};
+
 export const languageSlice = createSlice({
   name: "languageSlice",
-  initialState: {
-    lang: "ENU",
+  initialState: () => {
+    if (localStorage.getItem("lang") === "ENU") {
+      return { lang: "ENU" };
+    } else if (localStorage.getItem("lang") === "PLK") {
+      return { lang: "PLK" };
+    } else {
+      localStorage.lang = "PLK";
+
+      return { lang: "PLK" };
+    }
   },
   reducers: {
     switchLanguage: (state) => {
       if (state.lang === "ENU") {
+        localStorage.lang = "PLK";
         state.lang = "PLK";
       } else {
+        localStorage.lang = "ENU";
         state.lang = "ENU";
       }
     },

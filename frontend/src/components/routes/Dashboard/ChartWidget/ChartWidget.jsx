@@ -55,8 +55,8 @@ const ChartWidget = () => {
       {
         label: "Cycle",
         data: labels.map(() => Math.random()),
-        borderColor: "#023E8A",
-        backgroundColor: "#023E8A",
+        borderColor: "#5a95e3",
+        backgroundColor: "#5a95e3",
       },
     ],
   };
