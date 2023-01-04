@@ -1,11 +1,14 @@
 import Logo from "../../atomic/Logo";
 import polandFot from "../../../assets/poland.png";
+import engFot from "../../../assets/united-kingdom.png";
 import quitFot from "../../../assets/sign-out.png";
 import quitFotWhite from "../../../assets/sign-out-white.png";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 import { actionsDarkMode } from "../../../store/darkModeSlice";
+import { actionsLanguage } from "../../../store/languageSlice";
+import { displayValue } from "../../../store/languageSlice";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
@@ -61,7 +64,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const Nav = () => {
+const Nav = ({ lang }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.auth.userId);
@@ -91,9 +94,11 @@ const Nav = () => {
   return (
     <nav className="flex flex-row h-[12vh] w-[100vw] justify-between items-center px-[2rem]">
       <Logo />
-      <section className="flex flex-row w-[60%] justify-evenly items-center">
+      <section className="flex flex-row w-[70%] justify-evenly items-center">
         <article className="flex flex-row items-center justify-center">
-          <h2 className="text-[#2C2727] dark:text-[white]">Choose shop:</h2>
+          <h2 className="text-[#2C2727] dark:text-[white]">
+            {dispatch(displayValue("Choose shop"))}
+          </h2>
           <FormControl
             sx={{ m: 1, minWidth: 120, color: "#242526" }}
             size="small"
@@ -113,9 +118,15 @@ const Nav = () => {
           </FormControl>
         </article>
         <article className="text-md dark:text-[white] ">
-          Logged as: <span className="font-bold text-xl">{userId}</span>
+          {dispatch(displayValue("Logged as"))}{" "}
+          <span className="font-bold text-xl">{userId}</span>
         </article>
-        <img alt="fot" className="w-[2rem] cursor-pointer" src={polandFot} />
+        <img
+          alt="fot"
+          className="w-[2rem] cursor-pointer "
+          src={lang === "ENU" ? engFot : polandFot}
+          onClick={() => dispatch(actionsLanguage.switchLanguage())}
+        />
         <FormControlLabel
           control={<MaterialUISwitch sx={{ m: 1 }} />}
           onClick={() => {
@@ -131,7 +142,9 @@ const Nav = () => {
           onClick={logOutHandler}
           className="flex flex-row items-center justify-center cursor-pointer"
         >
-          <h2 className="font-bold text-md dark:text-[white]">Log out</h2>
+          <h2 className="font-bold text-md dark:text-[white]">
+            {dispatch(displayValue("Log out"))}
+          </h2>
           <img
             className="w-[3rem] ml-2"
             src={isDarkMode ? quitFotWhite : quitFot}

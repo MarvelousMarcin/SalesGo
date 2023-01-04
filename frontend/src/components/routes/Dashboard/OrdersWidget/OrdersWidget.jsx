@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import OrderCount from "../../../atomic/OrderCount";
 import { useNavigate } from "react-router-dom";
-
+import { displayValue } from "../../../../store/languageSlice";
+import { useDispatch } from "react-redux";
 const DUMMY_DATA = [
   { id: "1-XXX", status: "Not delivered" },
   { id: "1-XXX", status: "Not delivered" },
@@ -11,7 +12,7 @@ const DUMMY_DATA = [
 
 const OrderWidget = () => {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const [notPaidCount, setNotPaidCount] = useState(0);
   const [notDeliveredCount, setNotDeliveredCount] = useState(0);
   const [returnedCount, setReturnedCount] = useState(0);
@@ -38,7 +39,9 @@ const OrderWidget = () => {
 
   return (
     <section className="bg-[white] w-[100%] p-[2rem]  rounded-md dark:bg-[#242526] md:w-[35%]">
-      <h1 className="text-3xl font-bold dark:text-[white]">Orders</h1>
+      <h1 className="text-3xl font-bold dark:text-[white]">
+        {dispatch(displayValue("Orders"))}
+      </h1>
       {noOrders && (
         <div className="flex flex-col items-center justify-center h-[80%]">
           <span className="font-bold">Not orders!</span> You should use options
@@ -49,17 +52,17 @@ const OrderWidget = () => {
         <>
           <OrderCount
             onClick={() => navigate("/order/notpaid")}
-            name={"Not paid"}
+            name={dispatch(displayValue("Not paid"))}
             count={notPaidCount}
           />
           <OrderCount
             onClick={() => navigate("/order/notdeliv")}
-            name={"Not delivered"}
+            name={dispatch(displayValue("Not delivered"))}
             count={notDeliveredCount}
           />
           <OrderCount
             onClick={() => navigate("/order/returned")}
-            name={"Returned"}
+            name={dispatch(displayValue("Returned"))}
             count={returnedCount}
           />
         </>

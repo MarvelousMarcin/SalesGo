@@ -8,6 +8,8 @@ import barWhite from "../../../../assets/bar-chart-white.png";
 import line from "../../../../assets/graph.png";
 import lineWhite from "../../../../assets/graph-white.png";
 import { useSelector } from "react-redux";
+import { displayValue } from "../../../../store/languageSlice";
+import { useDispatch } from "react-redux";
 
 import {
   Chart as ChartJS,
@@ -35,6 +37,7 @@ ChartJS.register(
 
 const ChartWidget = () => {
   const [isBarGraph, setIsBarGraph] = useState(false);
+  const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.darkMode.darkMode);
   const labels = [
     "January",
@@ -72,7 +75,7 @@ const ChartWidget = () => {
     <section className="w-[98vw] rounded-md p-[2rem] h-[40rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] dark:bg-[#242526] bg-[white]">
       <article className="flex flex-row items-center">
         <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
-          Chart
+          {dispatch(displayValue("Chart"))}
         </h1>
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <Select
@@ -81,8 +84,10 @@ const ChartWidget = () => {
             id="demo-select-small"
             className="dark:text-[white] border-[white] border-[2px]"
           >
-            <MenuItem value={10}>Sold items</MenuItem>
-            <MenuItem value={20}>Cycle</MenuItem>
+            <MenuItem value={10}>
+              {dispatch(displayValue("Sold items"))}
+            </MenuItem>
+            <MenuItem value={20}>{dispatch(displayValue("Cycle"))}</MenuItem>
           </Select>
         </FormControl>
         <article className="w-[15rem] flex items-center justify-evenly">

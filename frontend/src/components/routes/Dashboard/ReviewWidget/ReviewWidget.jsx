@@ -3,6 +3,8 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Review from "../../../atomic/Review";
 import { useState } from "react";
+import { displayValue } from "../../../../store/languageSlice";
+import { useDispatch } from "react-redux";
 
 const DUMMY_DATA = [
   { score: 3, name: "Marcin Snow", comment: "Very slow" },
@@ -25,12 +27,13 @@ const DUMMY_DATA = [
 const ReviewWidget = () => {
   const [reviewType, setReviewType] = useState("All");
   let reviews = 0;
+  const dispatch = useDispatch();
 
   return (
     <section className="w-[100%]  bg-[white] rounded-md p-[2rem] dark:bg-[#242526] dark:text-[white] md:w-[60%]">
       <article className="flex items-center mb-[2rem]">
         <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
-          Review
+          {dispatch(displayValue("Reviews"))}
         </h1>
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <Select
@@ -42,9 +45,15 @@ const ReviewWidget = () => {
               setReviewType(e.target.value);
             }}
           >
-            <MenuItem value={"All"}>All</MenuItem>
-            <MenuItem value={"Positive"}>Positive</MenuItem>
-            <MenuItem value={"Negative"}>Negative</MenuItem>
+            <MenuItem value={"All"}> {dispatch(displayValue("All"))}</MenuItem>
+            <MenuItem value={"Positive"}>
+              {" "}
+              {dispatch(displayValue("Positive"))}
+            </MenuItem>
+            <MenuItem value={"Negative"}>
+              {" "}
+              {dispatch(displayValue("Negative"))}
+            </MenuItem>
           </Select>
         </FormControl>
       </article>

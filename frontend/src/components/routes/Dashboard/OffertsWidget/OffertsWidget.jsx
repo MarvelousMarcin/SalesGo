@@ -8,6 +8,8 @@ import Paper from "@mui/material/Paper";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { displayValue } from "../../../../store/languageSlice";
+import { useDispatch } from "react-redux";
 
 function createData(name, calories, fat, carbs) {
   return { name, calories, fat, carbs };
@@ -22,11 +24,13 @@ const rows = [
 ];
 
 const OffertsWidget = () => {
+  const dispatch = useDispatch();
+
   return (
     <section className="w-[98vw] rounded-md p-[2rem] h-[35rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white] dark:bg-[#242526]">
       <article className="flex flex-row items-center">
         <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
-          Offerts
+          {dispatch(displayValue("Offerts"))}
         </h1>
         <FormControl
           sx={{ m: 1, minWidth: 120, color: "#242526" }}
@@ -37,10 +41,10 @@ const OffertsWidget = () => {
             className="dark:text-[white] border-[white] border-[2px]"
           >
             <MenuItem value={10}>
-              <span>Most Popular</span>
+              <span>{dispatch(displayValue("Most Popular"))}</span>
             </MenuItem>
             <MenuItem value={20}>
-              <span>Least Popular</span>
+              <span>{dispatch(displayValue("Least Popular"))}</span>
             </MenuItem>
           </Select>
         </FormControl>
@@ -51,16 +55,24 @@ const OffertsWidget = () => {
             <TableHead>
               <TableRow>
                 <TableCell className="bg-[#023E8A] w-[25%]" align="center">
-                  <h1 className="font-bold text-[white]">Name</h1>
+                  <h1 className="font-bold text-[white]">
+                    {dispatch(displayValue("Name"))}
+                  </h1>
                 </TableCell>
                 <TableCell className="bg-[#023E8A] w-[25%]" align="center">
-                  <h1 className="font-bold text-[white]">Foto</h1>
+                  <h1 className="font-bold text-[white]">
+                    {dispatch(displayValue("Foto"))}
+                  </h1>
                 </TableCell>
                 <TableCell className="bg-[#023E8A] w-[25%]" align="center">
-                  <h1 className="font-bold text-[white]">Sold item</h1>
+                  <h1 className="font-bold text-[white]">
+                    {dispatch(displayValue("Sold items"))}
+                  </h1>
                 </TableCell>
                 <TableCell className="bg-[#023E8A] " align="center">
-                  <h1 className="font-bold text-[white]">Cycle</h1>
+                  <h1 className="font-bold text-[white]">
+                    {dispatch(displayValue("Cycle"))}
+                  </h1>
                 </TableCell>
                 <TableCell className="bg-[#023E8A] " align="center">
                   <div className="font-bold text-[white]"></div>

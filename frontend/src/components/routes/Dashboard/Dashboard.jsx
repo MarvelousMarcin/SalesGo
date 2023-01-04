@@ -6,11 +6,14 @@ import manFot from "../../../assets/man-comp.png";
 import AdviceWidget from "./AdviceWidget/AdviceWidget";
 import OffertsWidget from "./OffertsWidget/OffertsWidget";
 import ChartWidget from "./ChartWidget/ChartWidget";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const lang = useSelector((state) => state.language.lang);
+
   return (
     <section className="w-screen  bg-[#F7F7F7] dark:bg-[#18191a]">
-      <Nav />
+      <Nav lang={lang} />
       <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] md: flex-wrap xl:flex-nowrap">
         <OrderWidget />
         <QualityWidget />
