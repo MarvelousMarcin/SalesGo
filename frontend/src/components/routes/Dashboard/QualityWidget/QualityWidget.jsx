@@ -12,12 +12,14 @@ const QualityWidget = () => {
         {dispatch(displayValue("Quality"))}
       </h1>
       <section className="flex flex-row flex-wrap items-center justify-center gap-[3rem] md:flex-nowrap md:gap-[5rem]">
-        <Circle grade={8.3} caption={"Excellent"} />
+        <Circle grade={8.3} caption={dispatch(displayValue("Excellent"))} />
         <article className="flex flex-col justify-evenly items-start h-[12rem]">
-          <div className="text-[red] font-bold ">Your worst points</div>
-          <WorstPoint caption={"Price"} score={3.2} />
-          <WorstPoint caption={"Kidness"} score={10} />
-          <WorstPoint caption={"Speed"} score={5} />
+          <div className="text-[red] font-bold ">
+            {dispatch(displayValue("Your worst points"))}
+          </div>
+          <WorstPoint caption={dispatch(displayValue("Price"))} score={3.2} />
+          <WorstPoint caption={dispatch(displayValue("Kidness"))} score={10} />
+          <WorstPoint caption={dispatch(displayValue("Speed"))} score={5} />
         </article>
       </section>
     </section>

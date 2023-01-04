@@ -1,8 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initState = () => {
-  localStorage.removeItem("theme");
-  return false;
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+    return true;
+  } else {
+    document.documentElement.classList.remove("dark");
+    return false;
+  }
 };
 
 export const darkModeSlice = createSlice({

@@ -128,7 +128,12 @@ const Nav = ({ lang }) => {
           onClick={() => dispatch(actionsLanguage.switchLanguage())}
         />
         <FormControlLabel
-          control={<MaterialUISwitch sx={{ m: 1 }} />}
+          control={
+            <MaterialUISwitch
+              sx={{ m: 1 }}
+              defaultChecked={isDarkMode ? true : false}
+            />
+          }
           onClick={() => {
             if (isDarkMode) {
               dispatch(actionsDarkMode.setLightMode());

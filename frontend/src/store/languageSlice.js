@@ -34,6 +34,14 @@ const dictionary = {
   Cycle: { PLK: "Obrót", ENU: "Cycle" },
   Name: { PLK: "Nazwa", ENU: "Name" },
   Foto: { PLK: "Zdjęcie", ENU: "Foto" },
+  Price: { PLK: "Cena", ENU: "Price" },
+  Kidness: { PLK: "Obsłużenie", ENU: "Kidness" },
+  Speed: { PLK: "Szybkość", ENU: "Speed" },
+  "Your worst points": {
+    PLK: "Twoje najgorsze punkty",
+    ENU: "Your worst points",
+  },
+  Excellent: { PLK: "Wspaniale", ENU: "Excellent" },
 };
 
 export const languageSlice = createSlice({
