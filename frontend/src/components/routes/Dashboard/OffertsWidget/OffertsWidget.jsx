@@ -17,7 +17,7 @@ const OffertsWidget = ({ offerts }) => {
   const dispatch = useDispatch();
   const [sortingType, setSortingType] = useState("Most popular");
   const [offert, setOfferts] = useState(() => {
-    return offerts.sort((a, b) => b.sold - a.sold);
+    return offerts?.sort((a, b) => b.sold - a.sold);
   });
 
   return (
@@ -53,83 +53,92 @@ const OffertsWidget = ({ offerts }) => {
           </Select>
         </FormControl>
       </article>
-      <article className="flex items-center justify-center h-[90%]">
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 750 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell className="bg-[#023E8A] w-[25%]" align="left">
-                  <h1 className="font-bold text-[white]">
-                    {dispatch(displayValue("Name"))}
-                  </h1>
-                </TableCell>
-                <TableCell className="bg-[#023E8A] w-[25%]" align="left">
-                  <h1 className="font-bold text-[white]">
-                    {dispatch(displayValue("Foto"))}
-                  </h1>
-                </TableCell>
-                <TableCell className="bg-[#023E8A] w-[25%]" align="left">
-                  <h1 className="font-bold text-[white]">
-                    {dispatch(displayValue("Sold items"))}
-                  </h1>
-                </TableCell>
-                <TableCell className="bg-[#023E8A] " align="left">
-                  <h1 className="font-bold text-[white]">
-                    {sortingType === "Most Popular"
-                      ? dispatch(displayValue("Cycle"))
-                      : dispatch(displayValue("Unique Views"))}
-                  </h1>
-                </TableCell>
-                <TableCell className="bg-[#023E8A] " align="left">
-                  <div className="font-bold text-[white]"></div>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {offert.slice(0, 5).map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell
-                    className="dark:bg-[#242526] dark:text-[white]"
-                    component="th"
-                    scope="row"
-                    align="left"
-                  >
-                    {row.name}
+      {!offerts && (
+        <div className="flex items-center justify-center h-[80%] text-3xl">
+          {dispatch(displayValue("No avaiable offerts to show."))}
+        </div>
+      )}
+      {offerts && (
+        <article className="flex items-center justify-center h-[90%]">
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 750 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell className="bg-[#023E8A] w-[25%]" align="left">
+                    <h1 className="font-bold text-[white]">
+                      {dispatch(displayValue("Name"))}
+                    </h1>
                   </TableCell>
-                  <TableCell
-                    className="dark:bg-[#242526] dark:text-[white] flex"
-                    align="left"
-                  >
-                    <img
-                      className="w-[2rem] items-center justify-center"
-                      src={row.foto}
-                    />
+                  <TableCell className="bg-[#023E8A] w-[25%]" align="left">
+                    <h1 className="font-bold text-[white]">
+                      {dispatch(displayValue("Foto"))}
+                    </h1>
                   </TableCell>
-                  <TableCell
-                    className="dark:bg-[#242526] dark:text-[white]"
-                    align="left"
-                  >
-                    {row.sold}
+                  <TableCell className="bg-[#023E8A] w-[25%]" align="left">
+                    <h1 className="font-bold text-[white]">
+                      {dispatch(displayValue("Sold items"))}
+                    </h1>
                   </TableCell>
-                  <TableCell
-                    className="dark:bg-[#242526] dark:text-[white]"
-                    align="left"
-                  >
-                    {sortingType === "Most Popular" ? row.rotation : row.views}
+                  <TableCell className="bg-[#023E8A] " align="left">
+                    <h1 className="font-bold text-[white]">
+                      {sortingType === "Most Popular"
+                        ? dispatch(displayValue("Cycle"))
+                        : dispatch(displayValue("Unique Views"))}
+                    </h1>
                   </TableCell>
-                  <TableCell
-                    className="dark:bg-[#242526] dark:text-[white]"
-                    align="left"
-                  ></TableCell>
+                  <TableCell className="bg-[#023E8A] " align="left">
+                    <div className="font-bold text-[white]"></div>
+                  </TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </article>
+              </TableHead>
+              <TableBody>
+                {offert.slice(0, 5).map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell
+                      className="dark:bg-[#242526] dark:text-[white]"
+                      component="th"
+                      scope="row"
+                      align="left"
+                    >
+                      {row.name}
+                    </TableCell>
+                    <TableCell
+                      className="dark:bg-[#242526] dark:text-[white] flex"
+                      align="left"
+                    >
+                      <img
+                        className="w-[2rem] items-center justify-center"
+                        src={row.foto}
+                      />
+                    </TableCell>
+                    <TableCell
+                      className="dark:bg-[#242526] dark:text-[white]"
+                      align="left"
+                    >
+                      {row.sold}
+                    </TableCell>
+                    <TableCell
+                      className="dark:bg-[#242526] dark:text-[white]"
+                      align="left"
+                    >
+                      {sortingType === "Most Popular"
+                        ? row.rotation
+                        : row.views}
+                    </TableCell>
+                    <TableCell
+                      className="dark:bg-[#242526] dark:text-[white]"
+                      align="left"
+                    ></TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </article>
+      )}
     </section>
   );
 };

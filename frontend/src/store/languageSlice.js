@@ -48,6 +48,10 @@ const dictionary = {
     PLK: "Liczba unikalnych wyświetleń",
     ENU: "Unique Views",
   },
+  "No avaiable offerts to show.": {
+    PLK: "Brak dostępnych ofert",
+    ENU: "  No avaiable offerts to show.",
+  },
 
   "Not enough data to calculate your quality.": {
     PLK: "Za mała liczba danych aby policzyć twoją jakość.",
