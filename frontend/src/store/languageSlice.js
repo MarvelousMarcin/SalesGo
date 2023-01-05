@@ -44,6 +44,11 @@ const dictionary = {
   Communication: { PLK: "Komunikacja", ENU: "Communication" },
   "Service Quality": { PLK: "Obsługa", ENU: "Service Quality" },
   Proffesional: { PLK: "Profesjonalizm", ENU: "Proffesional" },
+  "Unique Views": {
+    PLK: "Liczba unikalnych wyświetleń",
+    ENU: "Unique Views",
+  },
+
   "Not enough data to calculate your quality.": {
     PLK: "Za mała liczba danych aby policzyć twoją jakość.",
     ENU: "Not enough data to calculate your quality.",

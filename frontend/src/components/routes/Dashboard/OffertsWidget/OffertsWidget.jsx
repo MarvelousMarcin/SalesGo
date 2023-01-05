@@ -10,24 +10,18 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { useEffect } from "react";
 
-function createData(name, calories, fat, carbs) {
-  return { name, calories, fat, carbs };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24),
-  createData("Ice cream sandwich", 237, 9.0, 37),
-  createData("Eclair", 262, 16.0, 24),
-  createData("Cupcake", 305, 3.7, 67),
-  createData("Gingerbread", 356, 16.0, 49),
-];
-
-const OffertsWidget = () => {
+const OffertsWidget = ({ offerts }) => {
   const dispatch = useDispatch();
+  const [sortingType, setSortingType] = useState("Most popular");
+  const [offert, setOfferts] = useState(() => {
+    return offerts.sort((a, b) => b.sold - a.sold);
+  });
 
   return (
-    <section className="w-[98vw] rounded-md p-[2rem] h-[35rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white] dark:bg-[#242526]">
+    <section className="w-[98vw] rounded-md p-[2rem] h-[50rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white] dark:bg-[#242526]">
       <article className="flex flex-row items-center">
         <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
           {dispatch(displayValue("Offerts"))}
@@ -37,13 +31,23 @@ const OffertsWidget = () => {
           size="small"
         >
           <Select
-            defaultValue={10}
+            defaultValue={"Most Popular"}
             className="dark:text-[white] border-[white] border-[2px]"
+            onChange={(e) => {
+              setSortingType(e.target.value);
+              if (e.target.value === "Most Popular") {
+                offerts.sort((a, b) => b.sold - a.sold);
+                setOfferts(offerts);
+              } else {
+                offerts.sort((a, b) => a.sold - b.sold);
+                setOfferts(offerts);
+              }
+            }}
           >
-            <MenuItem value={10}>
+            <MenuItem value={"Most Popular"}>
               <span>{dispatch(displayValue("Most Popular"))}</span>
             </MenuItem>
-            <MenuItem value={20}>
+            <MenuItem value={"Least Popular"}>
               <span>{dispatch(displayValue("Least Popular"))}</span>
             </MenuItem>
           </Select>
@@ -54,33 +58,35 @@ const OffertsWidget = () => {
           <Table sx={{ minWidth: 750 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell className="bg-[#023E8A] w-[25%]" align="center">
+                <TableCell className="bg-[#023E8A] w-[25%]" align="left">
                   <h1 className="font-bold text-[white]">
                     {dispatch(displayValue("Name"))}
                   </h1>
                 </TableCell>
-                <TableCell className="bg-[#023E8A] w-[25%]" align="center">
+                <TableCell className="bg-[#023E8A] w-[25%]" align="left">
                   <h1 className="font-bold text-[white]">
                     {dispatch(displayValue("Foto"))}
                   </h1>
                 </TableCell>
-                <TableCell className="bg-[#023E8A] w-[25%]" align="center">
+                <TableCell className="bg-[#023E8A] w-[25%]" align="left">
                   <h1 className="font-bold text-[white]">
                     {dispatch(displayValue("Sold items"))}
                   </h1>
                 </TableCell>
-                <TableCell className="bg-[#023E8A] " align="center">
+                <TableCell className="bg-[#023E8A] " align="left">
                   <h1 className="font-bold text-[white]">
-                    {dispatch(displayValue("Cycle"))}
+                    {sortingType === "Most Popular"
+                      ? dispatch(displayValue("Cycle"))
+                      : dispatch(displayValue("Unique Views"))}
                   </h1>
                 </TableCell>
-                <TableCell className="bg-[#023E8A] " align="center">
+                <TableCell className="bg-[#023E8A] " align="left">
                   <div className="font-bold text-[white]"></div>
                 </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {offert.slice(0, 5).map((row) => (
                 <TableRow
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -89,34 +95,35 @@ const OffertsWidget = () => {
                     className="dark:bg-[#242526] dark:text-[white]"
                     component="th"
                     scope="row"
-                    align="center"
+                    align="left"
                   >
                     {row.name}
                   </TableCell>
                   <TableCell
-                    className="dark:bg-[#242526] dark:text-[white]"
-                    align="center"
+                    className="dark:bg-[#242526] dark:text-[white] flex"
+                    align="left"
                   >
-                    {row.calories}
+                    <img
+                      className="w-[2rem] items-center justify-center"
+                      src={row.foto}
+                    />
                   </TableCell>
                   <TableCell
                     className="dark:bg-[#242526] dark:text-[white]"
-                    align="center"
+                    align="left"
                   >
-                    {row.fat}
+                    {row.sold}
                   </TableCell>
                   <TableCell
                     className="dark:bg-[#242526] dark:text-[white]"
-                    align="center"
+                    align="left"
                   >
-                    {row.carbs}
+                    {sortingType === "Most Popular" ? row.rotation : row.views}
                   </TableCell>
                   <TableCell
                     className="dark:bg-[#242526] dark:text-[white]"
-                    align="center"
-                  >
-                    {row.protein}
-                  </TableCell>
+                    align="left"
+                  ></TableCell>
                 </TableRow>
               ))}
             </TableBody>
