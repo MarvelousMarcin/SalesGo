@@ -8,6 +8,15 @@ import OffertsWidget from "./OffertsWidget/OffertsWidget";
 import ChartWidget from "./ChartWidget/ChartWidget";
 import { useSelector } from "react-redux";
 
+const userAspects = {
+  Price: 3,
+  Speed: 10,
+  Kidness: 10,
+  "Service Quality": 2,
+  Communication: 2,
+  Proffesional: 10,
+};
+
 const Dashboard = () => {
   const lang = useSelector((state) => state.language.lang);
 
@@ -16,7 +25,7 @@ const Dashboard = () => {
       <Nav lang={lang} />
       <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] md: flex-wrap xl:flex-nowrap">
         <OrderWidget />
-        <QualityWidget />
+        <QualityWidget userAspects={userAspects} />
       </article>
       <OffertsWidget />
       <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] mr-[1vw] mt-[1rem] flex-wrap md:flex-nowrap">

@@ -37,6 +37,18 @@ const dictionary = {
   Price: { PLK: "Cena", ENU: "Price" },
   Kidness: { PLK: "Obsłużenie", ENU: "Kidness" },
   Speed: { PLK: "Szybkość", ENU: "Speed" },
+  Good: { PLK: "Dobrze", ENU: "Good" },
+  Bad: { PLK: "Źle", ENU: "Bad" },
+  Horrible: { PLK: "Tragicznie", ENU: "Horrible" },
+  Perfect: { PLK: "Perfekcja", ENU: "Perfect" },
+  Communication: { PLK: "Komunikacja", ENU: "Communication" },
+  "Service Quality": { PLK: "Obsługa", ENU: "Service Quality" },
+  Proffesional: { PLK: "Profesjonalizm", ENU: "Proffesional" },
+  "Not enough data to calculate your quality.": {
+    PLK: "Za mała liczba danych aby policzyć twoją jakość.",
+    ENU: "Not enough data to calculate your quality.",
+  },
+
   "Your worst points": {
     PLK: "Twoje najgorsze punkty",
     ENU: "Your worst points",
