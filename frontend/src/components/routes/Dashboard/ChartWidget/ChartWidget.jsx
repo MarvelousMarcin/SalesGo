@@ -90,7 +90,7 @@ const ChartWidget = ({ orders }) => {
     labels,
     datasets: [
       {
-        label: `${sortingType}`,
+        label: `${dispatch(displayValue(sortingType))}`,
         data: values,
         borderColor: "#5a95e3",
         backgroundColor: "#5a95e3",
