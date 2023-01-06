@@ -23,7 +23,7 @@ import {
   Legend,
   BarElement,
 } from "chart.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -43,6 +43,10 @@ const ChartWidget = ({ orders }) => {
   const [values, setValues] = useState(getValues(sortingType, range, orders));
   const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.darkMode.darkMode);
+
+  useEffect(() => {
+    setValues(getValues(sortingType, range, orders));
+  }, [orders]);
 
   const createLabels = (range) => {
     if (range === "This week") {

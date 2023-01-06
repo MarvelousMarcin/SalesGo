@@ -3,14 +3,8 @@ import OrderCount from "../../../atomic/OrderCount";
 import { useNavigate } from "react-router-dom";
 import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
-const DUMMY_DATA = [
-  { id: "1-XXX", status: "Not delivered" },
-  { id: "1-XXX", status: "Not delivered" },
-  { id: "1-XXX", status: "Not delivered" },
-  { id: "1-XXX", status: "Returned" },
-];
 
-const OrderWidget = () => {
+const OrderWidget = ({ orders }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [notPaidCount, setNotPaidCount] = useState(0);
@@ -19,23 +13,24 @@ const OrderWidget = () => {
   const [noOrders, setNoOrders] = useState(false);
 
   useEffect(() => {
-    if (DUMMY_DATA.length === 0) {
-      setNoOrders(true);
+    if (!orders) {
+      return setNoOrders(true);
     }
 
-    const returned = DUMMY_DATA.filter(
-      (elem) => elem.status === "Returned"
-    ).length;
+    if (orders.length === 0) {
+      return setNoOrders(true);
+    }
+
+    setNoOrders(false);
+    const returned = orders.filter((elem) => elem.status === "Returned").length;
     setReturnedCount(returned);
-    const notPaid = DUMMY_DATA.filter(
-      (elem) => elem.status === "Not paid"
-    ).length;
+    const notPaid = orders.filter((elem) => elem.status === "Not paid").length;
     setNotPaidCount(notPaid);
-    const notDeliv = DUMMY_DATA.filter(
+    const notDeliv = orders.filter(
       (elem) => elem.status === "Not delivered"
     ).length;
     setNotDeliveredCount(notDeliv);
-  }, []);
+  }, [orders]);
 
   return (
     <section className="bg-[white] w-[100%] p-[2rem]  rounded-md dark:bg-[#242526] md:w-[35%]">
@@ -43,9 +38,12 @@ const OrderWidget = () => {
         {dispatch(displayValue("Orders"))}
       </h1>
       {noOrders && (
-        <div className="flex flex-col items-center justify-center h-[80%]">
-          <span className="font-bold">Not orders!</span> You should use options
-          to promote your offerts
+        <div className="flex flex-col items-center justify-center h-[80%] text-center dark:text-[white]">
+          {dispatch(
+            displayValue(
+              "Not orders. You should use options to promote your offerts."
+            )
+          )}
         </div>
       )}
       {!noOrders && (

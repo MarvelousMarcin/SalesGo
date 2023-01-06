@@ -9,7 +9,7 @@ const dictionary = {
   "Choose shop": { PLK: "Wybierz sklep", ENU: "Choose shop" },
   "Logged as": { PLK: "Zalogowany jako:", ENU: "Logged as" },
   "Not paid": { PLK: "Niezapłacone", ENU: "Not paid" },
-  "Not delivered": { PLK: "NIedostarczone", ENU: "Not delivered" },
+  "Not delivered": { PLK: "Niedostarczone", ENU: "Not delivered" },
   Returned: { PLK: "Zwrócone", ENU: "Returned" },
   "Log out": { PLK: "Wyjdź", ENU: "Log out" },
   Reviews: { PLK: "Opinie", ENU: "Reviews" },
@@ -53,7 +53,7 @@ const dictionary = {
     ENU: "Unique Views",
   },
   "No avaiable offerts to show.": {
-    PLK: "Brak dostępnych ofert",
+    PLK: "Brak dostępnych ofert.",
     ENU: "  No avaiable offerts to show.",
   },
 
@@ -87,6 +87,19 @@ const dictionary = {
   October: { PLK: "Październik", ENU: "October" },
   November: { PLK: "Listopad", ENU: "November" },
   December: { PLK: "Grudzień", ENU: "December" },
+  "No reviews to show.": {
+    PLK: "Brak recenzji do pokazania.",
+    ENU: "No reviews to show.",
+  },
+
+  "Not orders. You should use options to promote your offerts.": {
+    PLK: "Brak zamówień. Spróbuj użyć opcji promujących twoje oferty.",
+    ENU: "Not orders. You should use options to promote your offerts.",
+  },
+  "Not enough orders to create advices for you. Try again later.": {
+    PLK: "Za mało informacji aby wygenerować dla ciebie porady. Spróbuj ponownie później",
+    ENU: "Not enough orders to create advices for you. Try again later.",
+  },
 };
 
 const initState = () => {};

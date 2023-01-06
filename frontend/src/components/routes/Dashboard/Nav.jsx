@@ -64,7 +64,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const Nav = ({ lang }) => {
+const Nav = ({ lang, setShop }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.auth.userId);
@@ -104,14 +104,18 @@ const Nav = ({ lang }) => {
             size="small"
           >
             <Select
-              defaultValue={10}
+              defaultValue={"Allegro"}
               className="dark:text-[white] border-[white] border-[2px]"
+              onChange={(e) => {
+                console.log(e.target.value);
+                setShop(e.target.value);
+              }}
             >
-              <MenuItem value={10}>
+              <MenuItem value={"Allegro"}>
                 <span>Allegro</span>
               </MenuItem>
 
-              <MenuItem value={20}>
+              <MenuItem value={"Amazon"}>
                 <span>Amazon</span>
               </MenuItem>
             </Select>

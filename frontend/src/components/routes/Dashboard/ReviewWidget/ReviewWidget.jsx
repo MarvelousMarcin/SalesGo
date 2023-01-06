@@ -24,7 +24,7 @@ const DUMMY_DATA = [
   { score: 2, name: "Szymon", comment: "Never Again" },
 ];
 
-const ReviewWidget = () => {
+const ReviewWidget = ({ review }) => {
   const [reviewType, setReviewType] = useState("All");
   let reviews = 0;
   const dispatch = useDispatch();
@@ -58,20 +58,15 @@ const ReviewWidget = () => {
         </FormControl>
       </article>
       <article className="flex flex-col h-[50rem] justify-evenly md:justify-center md:h-[30rem]">
-        {DUMMY_DATA.map((item, count) => {
-          if (reviewType === "All" && reviews < 5) {
-            reviews++;
-            return (
-              <Review
-                score={item.score}
-                name={item.name}
-                comment={item.comment}
-              />
-            );
-          } else if (reviewType === "Positive" && reviews < 5) {
-            if (item.score >= 3) {
+        {!review && (
+          <div className="flex items-center justify-center text-2xl">
+            {dispatch(displayValue("No reviews to show."))}
+          </div>
+        )}
+        {review &&
+          review?.map((item, count) => {
+            if (reviewType === "All" && reviews < 5) {
               reviews++;
-
               return (
                 <Review
                   score={item.score}
@@ -79,21 +74,32 @@ const ReviewWidget = () => {
                   comment={item.comment}
                 />
               );
-            }
-          } else {
-            if (item.score < 3 && reviews < 5) {
-              reviews++;
+            } else if (reviewType === "Positive" && reviews < 5) {
+              if (item.score >= 3) {
+                reviews++;
 
-              return (
-                <Review
-                  score={item.score}
-                  name={item.name}
-                  comment={item.comment}
-                />
-              );
+                return (
+                  <Review
+                    score={item.score}
+                    name={item.name}
+                    comment={item.comment}
+                  />
+                );
+              }
+            } else {
+              if (item.score < 3 && reviews < 5) {
+                reviews++;
+
+                return (
+                  <Review
+                    score={item.score}
+                    name={item.name}
+                    comment={item.comment}
+                  />
+                );
+              }
             }
-          }
-        })}
+          })}
       </article>
     </section>
   );

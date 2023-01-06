@@ -20,6 +20,10 @@ const OffertsWidget = ({ offerts }) => {
     return offerts?.sort((a, b) => b.sold - a.sold);
   });
 
+  useEffect(() => {
+    setOfferts(offerts?.sort((a, b) => b.sold - a.sold));
+  }, [offerts]);
+
   return (
     <section className="w-[98vw] rounded-md p-[2rem] h-[50rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white] dark:bg-[#242526]">
       <article className="flex flex-row items-center">
@@ -53,8 +57,8 @@ const OffertsWidget = ({ offerts }) => {
           </Select>
         </FormControl>
       </article>
-      {!offerts && (
-        <div className="flex items-center justify-center h-[80%] text-3xl">
+      {offerts.length === 0 && (
+        <div className="flex items-center justify-center h-[80%] text-3xl dark:text-[white]">
           {dispatch(displayValue("No avaiable offerts to show."))}
         </div>
       )}
@@ -110,7 +114,7 @@ const OffertsWidget = ({ offerts }) => {
                       align="left"
                     >
                       <img
-                        className="w-[2rem] items-center justify-center"
+                        className="w-[4rem] items-center justify-center"
                         src={row.foto}
                       />
                     </TableCell>

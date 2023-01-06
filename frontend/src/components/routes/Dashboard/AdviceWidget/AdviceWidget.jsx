@@ -1,8 +1,9 @@
 import Advice from "../../../atomic/Advice";
 import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
-const AdviceWidget = () => {
+const AdviceWidget = ({ advices }) => {
   const dispatch = useDispatch();
 
   return (
@@ -10,20 +11,22 @@ const AdviceWidget = () => {
       <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
         {dispatch(displayValue("Sales Daily Advices"))}
       </h1>
-      <article className="flex flex-col justify-evenly items-center h-[100%]">
-        <Advice
-          advice={dispatch(
+      {!advices && (
+        <div className="flex flex-col items-center justify-center h-[80%] text-center dark:text-[white]">
+          {dispatch(
             displayValue(
-              "You are getting more and more negative opinions. Watch out!"
+              "Not enough orders to create advices for you. Try again later."
             )
           )}
-        />
-        <Advice
-          advice={dispatch(
-            displayValue("Product Table is getting more and more popular")
-          )}
-        />
-      </article>
+        </div>
+      )}
+      {advices && (
+        <article className="flex flex-col justify-evenly items-center h-[100%]">
+          {advices?.map((advice) => (
+            <Advice advice={dispatch(displayValue(advice))} />
+          ))}
+        </article>
+      )}
     </section>
   );
 };
