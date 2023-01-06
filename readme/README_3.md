@@ -25,18 +25,18 @@ id. W ramach dokumentacji prac praktycznie nie będzie. Design również będzie
 
 ```
 Na tym widgecie, oczekiwane będą bardzo ogólne statystyki związane z zamówieniami. Ważny jest podział
-na 3 kategorie: nieopłacone, niewysłanie i zwroty. Obok każdej kategorii oczekiwana jest liczba takich zamówień. Dodatkowo oczywiście po kliknięciu w kategorię oczekujemy podstrony z zamówieniami. Sam design,
+na 3 kategorie: nieopłacone, niewysłanie i zwroty. Obok każdej kategorii oczekiwana jest liczba takich zamówień. Dodatkowo oczywiście po kliknięciu w kategorię oczekujemy podstrony z zamówieniami. Sam design,
 dokumentacja i implementacja bardzo prosta oraz bez zaskoczeń. Trzeba uwzględnić takie sytuacje jak brak
-zamówień w danej kategorii zupełny brak zamówień w danym okresie. Mały widget, bez większych funkcjonalności - bardziej informacyjny.
+zamówień w danej kategorii zupełny brak zamówień w danym okresie. Mały widget, bez większych funkcjonalności - bardziej informacyjny.
 ```
 
 ### Widget Jakość Sprzedaży - 6h
 
 ```
-Widget na którym sprzedawca ma widzieć swoją ogólną ocenę jakości, budowaną na podstawie podkategorii(aspektów). Średnia suma punktów za aspekty generuje ocenę sprzedawcy - punktową oraz słowną.
+Widget na którym sprzedawca ma widzieć swoją ogólną ocenę jakości, budowaną na podstawie podkategorii(aspektów). Średnia suma punktów za aspekty generuje ocenę sprzedawcy - punktową oraz słowną.
 Dodatkowo informacyjne dla sprzedawcy pokazujemy mu jego najgorsze trzy wyniki w ramach wszystkich
 aspektów. Tutaj pracy jest całkiem dużo - zmieszczenie w designie dobrze całkiem dużej liczby informacji
-oraz stworzenie całego systemu wyliczającego ocenę - sumując aspekty. Element trudny technicznie. Oczywiście potrzebna jest też zaślepka która po kliknięciu, przekieruje nas na stronę jakości sprzedaży. Trzeba też
+oraz stworzenie całego systemu wyliczającego ocenę - sumując aspekty. Element trudny technicznie. Oczywiście potrzebna jest też zaślepka która po kliknięciu, przekieruje nas na stronę jakości sprzedaży. Trzeba też
 wziąć pod uwagę liczenie jakości w sytuacji bardzo małej liczby danych lub jej braku.
 1.5. Widget Opinie kupujących - 4h
 Widget prezentujący pięć recenzji danego sprzedawcy. Recenzja zawiera przede wszystkich ocenę gwiazdkową
@@ -62,7 +62,7 @@ ich prezentacji.
 ```
 Najbardziej złożony widget na którym musi znaleźć się wykres w dwóch wersjach kolumnowej lub liniowej
 w zależności od preferencji użytkownika. Wykres przedstawia Obrót lub Liczbę Sprzedanych Sztuk - również
-użytkownik ma wybór. Dodatkowo oferujemy możliwość zmiany przedziału czasowego w ramach trzech trybów Dziś, Obecny tydzień, Poprzedni tydzień. Trzeba wziąć pod uwagę zaznaczenie na wykresie punktów
+użytkownik ma wybór. Dodatkowo oferujemy możliwość zmiany przedziału czasowego w ramach trzech trybów Dziś, Obecny tydzień, Poprzedni tydzień. Trzeba wziąć pod uwagę zaznaczenie na wykresie punktów
 w okresie który się jeszcze nie zakończył oraz dać możliwość użytkownikowi na włączenie dodatkowej serii
 danych, prezentujących dane z poprzedniego okresu. Tutaj mamy całkiem sporo pracy, zarówno designerskiej
 oraz developerskiej. Wykres musi być przejrzysty oraz działać szybko i dobrze zbierać dane. Dokumentacja
