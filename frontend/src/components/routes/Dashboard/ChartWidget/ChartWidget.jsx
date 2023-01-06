@@ -180,7 +180,9 @@ const ChartWidget = ({ orders }) => {
             }}
             caption={dispatch(displayValue("Today"))}
             value={"Today"}
-            className={"w-[7rem] text-[0.9rem]"}
+            className={`w-[7rem] text-[0.9rem] ${
+              range === "Today" ? "bg-[#FFD166] text-black" : ""
+            }`}
           />
           <Button
             onClick={(e) => {
@@ -189,7 +191,9 @@ const ChartWidget = ({ orders }) => {
             }}
             caption={dispatch(displayValue("This week"))}
             value={"This week"}
-            className={"w-[7rem] text-[0.9rem]"}
+            className={`w-[7rem] text-[0.9rem] ${
+              range === "This week" ? "bg-[#FFD166] text-black" : ""
+            }`}
           />
           <Button
             onClick={(e) => {
@@ -198,7 +202,9 @@ const ChartWidget = ({ orders }) => {
             }}
             caption={dispatch(displayValue("This year"))}
             value={"This year"}
-            className={"w-[7rem] text-[0.9rem]"}
+            className={`w-[7rem] text-[0.9rem] ${
+              range === "This year" ? "bg-[#FFD166] text-black" : ""
+            }`}
           />
         </article>
       </article>
