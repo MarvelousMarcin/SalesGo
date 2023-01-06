@@ -176,7 +176,7 @@ const ChartWidget = ({ orders }) => {
           {!isBarGraph && <Line options={options} data={data} />}
           {isBarGraph && <Bar options={options} data={data} />}
         </article>
-        <article className="flex w-[40%] items-center justify-evenly mt-[3rem]">
+        <article className="flex md:w-[40%] items-center justify-evenly mt-[3rem] w-[80%]">
           <Button
             onClick={(e) => {
               setRange(e.target.value);

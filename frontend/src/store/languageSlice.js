@@ -39,7 +39,7 @@ const dictionary = {
   Speed: { PLK: "Szybkość", ENU: "Speed" },
   Today: { PLK: "Dzisiaj", ENU: "Today" },
   "This week": { PLK: "Ten tydzień", ENU: "This week" },
-  "This year": { PLK: "Ten rok", ENU: "year" },
+  "This year": { PLK: "Ten rok", ENU: "This year" },
 
   Good: { PLK: "Dobrze", ENU: "Good" },
   Bad: { PLK: "Źle", ENU: "Bad" },
