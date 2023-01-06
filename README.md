@@ -47,7 +47,7 @@
 > Pobierze repozytorium
 
 ```
-  git clone https://github.com/MarvelousMarcin/NoteShare
+    git clone https://github.com/MarvelousMarcin/SalesGo
 ```
 
 > Pobierz wszystkie potrzene pakiety w foldrze backend
