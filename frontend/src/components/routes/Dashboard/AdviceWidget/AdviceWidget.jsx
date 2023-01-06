@@ -1,7 +1,6 @@
 import Advice from "../../../atomic/Advice";
 import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 
 const AdviceWidget = ({ advices }) => {
   const dispatch = useDispatch();
