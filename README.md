@@ -39,6 +39,65 @@ Jeżeli masz konto po prostu wpisz swój unikalny kod sprzedawcy. Jeżeli login 
 
 ## 3. Rejestracja
 
+Jeżeli konta nie masz możesz je zrobić. **Loginy nie mogą się powtarzać.**
+
 ### Strona rejestracji
 
 ![alt text](./readme/register.png)
+
+## 3. Strona Główna Dashboard
+
+Po wpisaniu prawidłowego loginu, zostaniesz przeniesiony na swoją stronę główną ze wszystkimi najważniejszymi danymi dla sprzedawcy.
+
+### Strona rejestracji
+
+![alt text](./readme/dashboard.png)
+
+## 4. Widżet Zamówień
+
+Widżet zamówień pokazuje trzy kategorie zamówień oraz liczbę takich zamówień w systemie. Mamy zamówienia nieopłacone, niedostarczone oraz zwrócone.
+
+![alt text](./readme/orders.png)
+
+## 5. Widżet Jakości
+
+Widżet jakości pokazuję naszą ogólna ocenę jako sprzedawca a wraz z nią jedną z 5 kategorii. Na ocenę składają się tzw. aspekty jakości z których wyliczana jest średnia - **końcowa ocena jakości**. Dodatkowo z prawej strony mamy zaprezentowane trzy aspekty w których wypadamy najgorzej.
+Dostępne kategorie do uzyskania:
+
+- Perfect - Perfekcja
+- Excellent - Wspaniale
+- Good - Dobrze
+- Bad - Źle
+- Horrible - Tragicznie
+
+### Kategoria - **Dobrze**
+
+![alt text](./readme/quality1.png)
+
+### Kategoria - **Źle**
+
+![alt text](./readme/quality2.png)
+
+## 6. Widżet Ofert
+
+Widżet ofert pokazuje nam 5 najbardzije popularnych lub najmniej popularnych ofert. Rodzaj sortownia możemy sobie ręcznie ustawić. Tabela prezentuje nam nazwę, zdjęcie, liczbę sprzedanych produktów oraz liczbę wyświetleń lub obrót oferty.
+
+![alt text](./readme/offerts.gif)
+
+## 7. Widżet Opinii
+
+Widżet opinii prezentuje pięc opinii dotyczących sprzedawcy. Możemy wybrać filtrowanie opinii tylko pozytywnych, wszystkich lub tylko negatywnych.
+
+![alt text](./readme/reviews.gif)
+
+## 4. Dark Mode
+
+### Włączanie Dark Mode
+
+![alt text](./readme/darkmode.gif)
+
+## 4. Zmiana języka
+
+### Zmiana języka na polski
+
+![alt text](./readme/lang.gif)

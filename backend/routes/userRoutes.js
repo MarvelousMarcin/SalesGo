@@ -145,11 +145,23 @@ userRouter.post("/get_data", auth, (req, res) => {
             comment:
               "Fast, professional and elegant. I am very happy and satisdied",
           },
-          { score: 3, name: "Marcin Snow", comment: "Very slow" },
-          { score: 1, name: "Marcin Snow", comment: "Very slow" },
-          { score: 2, name: "Marcin Snow", comment: "Very slow" },
-          { score: 2, name: "Marcin Snow", comment: "Very slow" },
-          { score: 1, name: "Franek", comment: "Very slow" },
+          {
+            score: 3,
+            name: "Beric Dondarrion",
+            comment: "Taling to fast and cant understand what he was sayin'",
+          },
+          {
+            score: 1,
+            name: "Logen Ninefingers",
+            comment: "I am very disappointed.😣",
+          },
+          {
+            score: 2,
+            name: "Celebrimbor",
+            comment: "Wort salesman ever. Very not recommended.",
+          },
+          { score: 2, name: "Tattersail", comment: "He sold me broken thing." },
+          { score: 1, name: "Granny Weatherwax", comment: "Very slow" },
           { score: 2, name: "Szymon", comment: "Never Again" },
         ],
         orders: [
