@@ -13,6 +13,14 @@
   node -v
   ```
 
+## 2. Projekt w Figmie - Atomic Design
+
+[Figma](https://www.figma.com/file/7LLcdN46lwZXt0gx6qDLQz/PGUI---Projekt?node-id=0%3A1&t=TPm7rHPxQyqcHijm-1)
+
+## 3. Projekt abstrakcyjny
+
+Read more [here](./README_2.md) # It works!
+
 ## 2. Użyte technologie
 
 <ol>
