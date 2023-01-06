@@ -4,12 +4,33 @@
 
 - npm
 
-  > npm -v
+  ```
+  npm -v
+  ```
 
 - node.js
-  > node -v
+  ```
+  node -v
+  ```
 
-## 2. Uruchomienie
+## 2. Użyte technologie
+
+<ol>
+  <li><a href="https://reactjs.org/">React</a></li>
+  <li><a href="https://reactrouter.com/en/main">React Router</a></li>
+  <li><a href="https://www.framer.com/motion/">framer-motion</a></li>
+  <li><a href="https://tailwindcss.com/">Tailwind</a></li>
+  <li><a href="https://redux.js.org/">Redux</a></li>
+  <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
+  <li><a href="https://mui.com/">Material UI</a></li>
+  <li><a href="https://www.chartjs.org/">Chart JS</a></li>
+  <li>JWT - Json Web Token</li>
+  <li>node.js</li>
+  <li>express</li>
+  <li>MongoDB</li>
+</ol>
+
+## 3. Uruchomienie
 
 > Pobierze repozytorium
 
@@ -27,7 +48,7 @@
 - backend: npm run dev
 - frontend: npm start
 
-## 3. Logowanie
+## 4. Logowanie
 
 Jeżeli masz konto po prostu wpisz swój unikalny kod sprzedawcy.
 
@@ -39,7 +60,7 @@ Jeżeli podasz login osoby nieistiejącej, zostaniesz o tym poinformowany.
 
 ![alt text](./readme/error.png)
 
-## 3. Rejestracja
+## 5. Rejestracja
 
 Jeżeli konta nie masz możesz je zrobić. **Loginy nie mogą się powtarzać.**
 
@@ -47,19 +68,19 @@ Jeżeli konta nie masz możesz je zrobić. **Loginy nie mogą się powtarzać.**
 
 ![alt text](./readme/register.png)
 
-## 3. Strona Główna Dashboard
+## 6. Strona Główna Dashboard
 
 Po wpisaniu prawidłowego loginu, zostaniesz przeniesiony na swoją stronę główną ze wszystkimi najważniejszymi danymi dla sprzedawcy.
 
 ![alt text](./readme/dashboard.png)
 
-## 4. Widżet Zamówień
+## 7. Widżet Zamówień
 
 Widżet zamówień pokazuje trzy kategorie zamówień oraz liczbę takich zamówień w systemie. Mamy zamówienia nieopłacone, niedostarczone oraz zwrócone.
 
 ![alt text](./readme/orders.png)
 
-## 5. Widżet Jakości
+## 8. Widżet Jakości
 
 Widżet jakości pokazuję naszą ogólna ocenę jako sprzedawcy a wraz z nią jedną z 5 kategorii. Na ocenę składają się tzw. aspekty jakości z których wyliczana jest średnia - **końcowa ocena jakości**. Dodatkowo z prawej strony mamy zaprezentowane trzy aspekty w których wypadamy najgorzej.
 Dostępne kategorie do uzyskania:
@@ -78,19 +99,19 @@ Dostępne kategorie do uzyskania:
 
 ![alt text](./readme/quality2.png)
 
-## 6. Widżet Ofert
+## 9. Widżet Ofert
 
 Widżet ofert pokazuje nam 5 najbardzije popularnych lub najmniej popularnych ofert. Rodzaj sortownia możemy sobie ręcznie ustawić. Tabela prezentuje nam nazwę, zdjęcie, liczbę sprzedanych produktów oraz liczbę wyświetleń lub obrót oferty.
 
 ![alt text](./readme/offerts.gif)
 
-## 7. Widżet Opinii
+## 10. Widżet Opinii
 
 Widżet opinii prezentuje pięc opinii dotyczących sprzedawcy. Możemy wybrać filtrowanie opinii tylko pozytywnych, wszystkich lub tylko negatywnych.
 
 ![alt text](./readme/reviews.gif)
 
-## 8. Widżet Wykresu Sprzedaży
+## 11. Widżet Wykresu Sprzedaży
 
 Wykres sprzedaży pokazuje nam statystykę odnośnie naszych zamówień. Możemy go parametryzować przy użyciu opcji.
 
@@ -100,24 +121,28 @@ Wykres sprzedaży pokazuje nam statystykę odnośnie naszych zamówień. Możemy
 
 > **Wybrać typ wykresu - Słupkowy lub liniowy** ![alt text](./readme/type.gif)
 
-## 9. Widżet Porad Sprzedażowych
+## 12. Widżet Porad Sprzedażowych
 
 W wydżecie możemy znaleźć porady dotyczące naszych działań, generowane automatycznie bazując na naszych ofertach oraz zamówieniach.
 
 ![alt text](./readme/advices.png)
 
-## 10. Dark Mode
+## 13. Dark Mode
 
 ### Włączanie Dark Mode
 
 ![alt text](./readme/darkmode.gif)
 
-## 11. Zmiana języka
+## 14. Zmiana języka
 
 ### Zmiana języka na polski
 
 ![alt text](./readme/lang.gif)
 
-## 12. Zmiana sklepu
+## 15. Zmiana sklepu
 
 ![alt text](./readme/shop.gif)
+
+```
+
+```
