@@ -37,6 +37,10 @@ const dictionary = {
   Price: { PLK: "Cena", ENU: "Price" },
   Kidness: { PLK: "Obsłużenie", ENU: "Kidness" },
   Speed: { PLK: "Szybkość", ENU: "Speed" },
+  Today: { PLK: "Dzisiaj", ENU: "Today" },
+  "This week": { PLK: "Ten tydzień", ENU: "This week" },
+  "This year": { PLK: "Ten rok", ENU: "year" },
+
   Good: { PLK: "Dobrze", ENU: "Good" },
   Bad: { PLK: "Źle", ENU: "Bad" },
   Horrible: { PLK: "Tragicznie", ENU: "Horrible" },
@@ -63,6 +67,26 @@ const dictionary = {
     ENU: "Your worst points",
   },
   Excellent: { PLK: "Wspaniale", ENU: "Excellent" },
+  Monday: { PLK: "Poniedziałek", ENU: "Monday" },
+  Tuesday: { PLK: "Wtorek", ENU: "Tuesday" },
+  Wednesday: { PLK: "Środa", ENU: "Wednesday" },
+  Thursday: { PLK: "Czwartek", ENU: "Thursday" },
+  Friday: { PLK: "Piątek", ENU: "Friday" },
+  Saturday: { PLK: "Sobota", ENU: "Saturday" },
+  Sunday: { PLK: "Niedziela", ENU: "Sunday" },
+
+  January: { PLK: "Styczeń", ENU: "January" },
+  February: { PLK: "Luty", ENU: "February" },
+  March: { PLK: "Marzec", ENU: "March" },
+  April: { PLK: "Kwiecień", ENU: "April" },
+  May: { PLK: "Maj", ENU: "May" },
+  June: { PLK: "Czerwiec", ENU: "June" },
+  July: { PLK: "Lipiec", ENU: "July" },
+  August: { PLK: "Sierpień", ENU: "August" },
+  September: { PLK: "Wrzesień", ENU: "September" },
+  October: { PLK: "Październik", ENU: "October" },
+  November: { PLK: "Listopad", ENU: "November" },
+  December: { PLK: "Grudzień", ENU: "December" },
 };
 
 const initState = () => {};

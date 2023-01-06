@@ -87,6 +87,29 @@ const offerts = [
   ),
 ];
 
+const orders = [
+  { date: "2023-1-4 01:33", "Sold items": 10, Cycle: 10 },
+  { date: "2023-2-5 01:33", "Sold items": 20, Cycle: 12 },
+  { date: "2023-12-13 01:33", "Sold items": 20, Cycle: 12 },
+  { date: "2023-3-13 01:33", "Sold items": 40, Cycle: 13 },
+  { date: "2023-1-13 01:33", "Sold items": 80, Cycle: 12 },
+  { date: "2023-8-6 01:33", "Sold items": 100, Cycle: 11 },
+  { date: "2023-10-4 01:33", "Sold items": 100, Cycle: 11 },
+  { date: "2023-11-3 01:33", "Sold items": 100, Cycle: 11 },
+  { date: "2023-1-2 01:33", "Sold items": 100, Cycle: 11 },
+  { date: "2023-5-13 01:33", "Sold items": 100, Cycle: 11 },
+  { date: "2023-6-18 01:33", "Sold items": 42, Cycle: 11 },
+  { date: "2023-1-5 01:33", "Sold items": 22, Cycle: 7 },
+  { date: "2023-1-3 01:33", "Sold items": 42, Cycle: 2 },
+  { date: "2023-1-8 01:33", "Sold items": 42, Cycle: 2 },
+  { date: "2023-1-2 01:33", "Sold items": 100, Cycle: 2 },
+  { date: "2023-1-2 01:33", "Sold items": 100, Cycle: 2 },
+  { date: "2023-1-6 02:33", "Sold items": 100, Cycle: 2 },
+  { date: "2023-1-6 03:33", "Sold items": 100, Cycle: 2 },
+  { date: "2023-1-6 04:33", "Sold items": 100, Cycle: 2 },
+  { date: "2023-1-6 21:33", "Sold items": 100, Cycle: 2 },
+];
+
 const Dashboard = () => {
   const lang = useSelector((state) => state.language.lang);
 
@@ -104,7 +127,7 @@ const Dashboard = () => {
           <img alt="fot" className="" src={manFot} />
         </div>
       </article>
-      <ChartWidget />
+      <ChartWidget orders={orders} />
       <AdviceWidget />
     </section>
   );
