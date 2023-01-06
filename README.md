@@ -29,11 +29,13 @@
 
 ## 3. Logowanie
 
-Jeżeli masz konto po prostu wpisz swój unikalny kod sprzedawcy. Jeżeli login osoby nieistiejącej zostaniesz o tym poinformowany.
+Jeżeli masz konto po prostu wpisz swój unikalny kod sprzedawcy.
 
 ### Strona logowania
 
 ![alt text](./readme/login2.gif)
+
+Jeżeli podasz login osoby nieistiejącej, zostaniesz o tym poinformowany.
 
 ![alt text](./readme/error.png)
 
@@ -49,8 +51,6 @@ Jeżeli konta nie masz możesz je zrobić. **Loginy nie mogą się powtarzać.**
 
 Po wpisaniu prawidłowego loginu, zostaniesz przeniesiony na swoją stronę główną ze wszystkimi najważniejszymi danymi dla sprzedawcy.
 
-### Strona rejestracji
-
 ![alt text](./readme/dashboard.png)
 
 ## 4. Widżet Zamówień
@@ -61,14 +61,14 @@ Widżet zamówień pokazuje trzy kategorie zamówień oraz liczbę takich zamów
 
 ## 5. Widżet Jakości
 
-Widżet jakości pokazuję naszą ogólna ocenę jako sprzedawca a wraz z nią jedną z 5 kategorii. Na ocenę składają się tzw. aspekty jakości z których wyliczana jest średnia - **końcowa ocena jakości**. Dodatkowo z prawej strony mamy zaprezentowane trzy aspekty w których wypadamy najgorzej.
+Widżet jakości pokazuję naszą ogólna ocenę jako sprzedawcy a wraz z nią jedną z 5 kategorii. Na ocenę składają się tzw. aspekty jakości z których wyliczana jest średnia - **końcowa ocena jakości**. Dodatkowo z prawej strony mamy zaprezentowane trzy aspekty w których wypadamy najgorzej.
 Dostępne kategorie do uzyskania:
 
-- Perfect - Perfekcja
-- Excellent - Wspaniale
-- Good - Dobrze
-- Bad - Źle
-- Horrible - Tragicznie
+- Perfect - **Perfekcja**
+- Excellent - **Wspaniale**
+- Good - **Dobrze**
+- Bad - **Źle**
+- Horrible - **Tragicznie**
 
 ### Kategoria - **Dobrze**
 
@@ -92,7 +92,7 @@ Widżet opinii prezentuje pięc opinii dotyczących sprzedawcy. Możemy wybrać 
 
 ## 8. Widżet Wykresu Sprzedaży
 
-Wykres sprzedaży pokazuje nam statystykę odnośnie naszych zamówień. Możemy go parametryzować przy użyciu opcji dookoła.
+Wykres sprzedaży pokazuje nam statystykę odnośnie naszych zamówień. Możemy go parametryzować przy użyciu opcji.
 
 > **Wybrać Obrót lub Liczbę sprzedanych produktów** ![alt text](./readme/data.gif)
 
@@ -106,14 +106,18 @@ W wydżecie możemy znaleźć porady dotyczące naszych działań, generowane au
 
 ![alt text](./readme/advices.png)
 
-## 4. Dark Mode
+## 10. Dark Mode
 
 ### Włączanie Dark Mode
 
 ![alt text](./readme/darkmode.gif)
 
-## 4. Zmiana języka
+## 11. Zmiana języka
 
 ### Zmiana języka na polski
 
 ![alt text](./readme/lang.gif)
+
+## 12. Zmiana sklepu
+
+![alt text](./readme/shop.gif)
