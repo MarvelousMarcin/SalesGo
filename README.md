@@ -90,6 +90,22 @@ Widżet opinii prezentuje pięc opinii dotyczących sprzedawcy. Możemy wybrać 
 
 ![alt text](./readme/reviews.gif)
 
+## 8. Widżet Wykresu Sprzedaży
+
+Wykres sprzedaży pokazuje nam statystykę odnośnie naszych zamówień. Możemy go parametryzować przy użyciu opcji dookoła.
+
+> **Wybrać Obrót lub Liczbę sprzedanych produktów** ![alt text](./readme/data.gif)
+
+> **Wybrać dane z Dzisiaj, Tego Tygodniu lub Tego Roku** ![alt text](./readme/rage.gif)
+
+> **Wybrać typ wykresu - Słupkowy lub liniowy** ![alt text](./readme/type.gif)
+
+## 9. Widżet Porad Sprzedażowych
+
+W wydżecie możemy znaleźć porady dotyczące naszych działań, generowane automatycznie bazując na naszych ofertach oraz zamówieniach.
+
+![alt text](./readme/advices.png)
+
 ## 4. Dark Mode
 
 ### Włączanie Dark Mode
