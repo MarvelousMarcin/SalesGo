@@ -16,7 +16,7 @@
 ## 2. Użyte technologie
 
 <ol>
-  <li><a href="https://reactjs.org/" target="blank">React</a></li>
+  <li><a href="https://reactjs.org/" target="_blank">React</a></li>
   <li><a href="https://reactrouter.com/en/main">React Router</a></li>
   <li><a href="https://www.framer.com/motion/">framer-motion</a></li>
   <li><a href="https://tailwindcss.com/">Tailwind</a></li>
