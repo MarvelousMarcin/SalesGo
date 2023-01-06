@@ -34,19 +34,43 @@
 
 > Pobierze repozytorium
 
-- git clone https://github.com/MarvelousMarcin/NoteShare
-  > Pobierz wszystkie potrzene pakiety w foldrze backend
-- cd backend
-- npm i
-  > i pobierz frontend
-- cd frontend
-- npm i
-  > Aby backend działał prawidłowo musisz też dodać plik .env odpowiedną zawartością >
-- PORT=4000
-- JWT_TOKEN="super_secret_code"
-  > Musisz uruchomić teraz frontend i backend
-- backend: npm run dev
-- frontend: npm start
+```
+  git clone https://github.com/MarvelousMarcin/NoteShare
+```
+
+> Pobierz wszystkie potrzene pakiety w foldrze backend
+
+```
+  cd backend
+```
+
+```
+  npm i
+```
+
+> i pobierz frontend
+
+```
+  cd frontend
+```
+
+```
+  npm i
+```
+
+> Aby backend działał prawidłowo musisz też dodać plik .env odpowiedną zawartością >
+
+```
+PORT=4000
+JWT_TOKEN="super_secret_code"
+```
+
+> Musisz uruchomić teraz frontend i backend
+
+```
+backend: npm run dev
+frontend: npm start
+```
 
 ## 4. Logowanie
 
