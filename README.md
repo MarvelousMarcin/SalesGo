@@ -25,9 +25,9 @@
   <li><a href="https://mui.com/">Material UI</a></li>
   <li><a href="https://www.chartjs.org/">Chart JS</a></li>
   <li>JWT - Json Web Token</li>
-  <li>node.js</li>
-  <li>express</li>
-  <li>MongoDB</li>
+  <li><a href="https://nodejs.org/en/">node.js</a></li>
+  <li><a href="https://expressjs.com/">express</a></li>
+  <li><a href="https://www.mongodb.com/">MongoDB</a></li>
 </ol>
 
 ## 3. Uruchomienie
