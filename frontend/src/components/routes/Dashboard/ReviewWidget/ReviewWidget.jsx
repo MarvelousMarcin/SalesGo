@@ -5,36 +5,27 @@ import Review from "../../../atomic/Review";
 import { useState } from "react";
 import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
-
-const DUMMY_DATA = [
-  { score: 3, name: "Marcin Snow", comment: "Very slow" },
-  { score: 5, name: "Maciej", comment: "Awensome" },
-  { score: 2, name: "Marcin", comment: "Horrible" },
-  { score: 4, name: "Harry Potter", comment: "Very slow" },
-  {
-    score: 5,
-    name: "Piotr Nowak",
-    comment: "Fast, professional and elegant. I am very happy and satisdied",
-  },
-  { score: 3, name: "Marcin Snow", comment: "Very slow" },
-  { score: 1, name: "Marcin Snow", comment: "Very slow" },
-  { score: 2, name: "Marcin Snow", comment: "Very slow" },
-  { score: 2, name: "Marcin Snow", comment: "Very slow" },
-  { score: 1, name: "Franek", comment: "Very slow" },
-  { score: 2, name: "Szymon", comment: "Never Again" },
-];
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ReviewWidget = ({ review }) => {
   const [reviewType, setReviewType] = useState("All");
   let reviews = 0;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <section className="w-[100%]  bg-[white] rounded-md p-[2rem] dark:bg-[#242526] dark:text-[white] md:w-[60%]">
       <article className="flex items-center mb-[2rem]">
-        <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
+        <motion.h1
+          whileHover={{
+            x: 10,
+          }}
+          className="text-3xl font-bold mr-[2rem] dark:text-[white] cursor-pointer"
+          onClick={() => navigate("/reviews")}
+        >
           {dispatch(displayValue("Reviews"))}
-        </h1>
+        </motion.h1>
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <Select
             defaultValue={"All"}

@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 const Dashboard = () => {
   const lang = useSelector((state) => state.language.lang);
   const token = useSelector((state) => state.auth.token);
-
   const [shop, setShop] = useState("Allegro");
   const [isLoading, setIsLoading] = useState(true);
   const [userAspects, setUserAspects] = useState(null);
@@ -22,6 +21,11 @@ const Dashboard = () => {
   const [advices, setAdvices] = useState(null);
 
   const getData = async () => {
+    if (advices && review) {
+      return;
+    }
+
+    console.log("test");
     const response = await fetch("http://localhost:4000/get_data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -38,6 +42,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     getData();
+
     setIsLoading(false);
   }, [shop]);
 

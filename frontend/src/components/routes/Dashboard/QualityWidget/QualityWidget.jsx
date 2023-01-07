@@ -2,9 +2,12 @@ import Circle from "../../../atomic/Circle";
 import WorstPoint from "../../../atomic/WorstPoint";
 import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const QualityWidget = ({ userAspects }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const theWorst = () => {
     let arr = Object.keys(userAspects).map(function (key) {
@@ -24,9 +27,15 @@ const QualityWidget = ({ userAspects }) => {
 
   return (
     <section className="bg-[white] w-[100%]  rounded-md p-[2rem] dark:bg-[#242526] md:w-[65%]">
-      <h1 className="text-3xl font-bold dark:text-[white]">
+      <motion.h1
+        whileHover={{
+          x: 10,
+        }}
+        className="text-3xl font-bold dark:text-[white] cursor-pointer"
+        onClick={() => navigate("/quality")}
+      >
         {dispatch(displayValue("Quality"))}
-      </h1>
+      </motion.h1>
       {!userAspects && (
         <div className="flex text-xl items-center justify-center h-[90%] dark:text-[white]">
           {dispatch(displayValue("Not enough data to calculate your quality."))}

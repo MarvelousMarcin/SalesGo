@@ -1,24 +1,39 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { displayValue } from "../../../../store/languageSlice";
+import { useDispatch } from "react-redux";
+import back from "../../../../assets/back.png";
+import { useNavigate } from "react-router-dom";
 
 const OrderCategory = () => {
   let { category } = useParams();
-  const [title, setTitle] = useState("");
+  const navigate = useNavigate();
 
+  const [title, setTitle] = useState("");
+  const dispatch = useDispatch();
   useEffect(() => {
     if (category === "returned") {
-      setTitle("Returned");
+      setTitle(dispatch(displayValue("Returned")));
     } else if (category === "notpaid") {
-      setTitle("Not Paid");
+      setTitle(dispatch(displayValue("Not paid")));
     } else if (category === "notdeliv") {
-      setTitle("Not Delivered");
+      setTitle(dispatch(displayValue("Not delivered")));
     } else {
-      setTitle("Unknown");
+      setTitle("");
     }
   }, []);
 
-  return <sercion>{title}</sercion>;
+  return (
+    <section className="w-[100vw] h-[100vh] bg-[#F7F7F7] p-10">
+      <img
+        className="w-[2rem]"
+        src={back}
+        onClick={() => navigate("/dashboard")}
+      />
+      <h1>{title}</h1>
+    </section>
+  );
 };
 
 export default OrderCategory;

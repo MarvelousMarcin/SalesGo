@@ -102,8 +102,6 @@ const dictionary = {
   },
 };
 
-const initState = () => {};
-
 export const languageSlice = createSlice({
   name: "languageSlice",
   initialState: () => {
@@ -132,6 +130,10 @@ export const languageSlice = createSlice({
 
 export const displayValue = (label) => {
   return (dispatch, getState) => {
+    if (!label || !{ ...label }) {
+      return "";
+    }
+
     const state = getState();
     const lang = state.language.lang;
     return dictionary[label][lang];
