@@ -107,7 +107,6 @@ const Nav = ({ lang, setShop }) => {
               defaultValue={"Allegro"}
               className="dark:text-[white] border-[white] border-[2px]"
               onChange={(e) => {
-                console.log(e.target.value);
                 setShop(e.target.value);
               }}
             >

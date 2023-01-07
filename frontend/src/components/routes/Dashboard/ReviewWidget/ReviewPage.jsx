@@ -14,7 +14,7 @@ const ReviewPage = () => {
         src={back}
         onClick={() => navigate("/dashboard")}
       />
-      <h1>{dispatch(displayValue("Reviews"))}</h1>
+      <h1 className="text-3xl">{dispatch(displayValue("Reviews"))}</h1>
     </section>
   );
 };

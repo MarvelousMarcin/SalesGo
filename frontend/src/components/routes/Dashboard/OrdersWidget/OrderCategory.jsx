@@ -31,7 +31,7 @@ const OrderCategory = () => {
         src={back}
         onClick={() => navigate("/dashboard")}
       />
-      <h1>{title}</h1>
+      <h1 className="text-3xl">{title}</h1>
     </section>
   );
 };

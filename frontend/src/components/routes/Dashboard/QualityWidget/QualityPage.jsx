@@ -14,7 +14,7 @@ const QualityPage = () => {
         src={back}
         onClick={() => navigate("/dashboard")}
       />
-      <h1>{dispatch(displayValue("Quality"))}</h1>
+      <h1 className="text-3xl">{dispatch(displayValue("Quality"))}</h1>
     </section>
   );
 };

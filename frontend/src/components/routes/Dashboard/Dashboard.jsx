@@ -8,6 +8,8 @@ import OffertsWidget from "./OffertsWidget/OffertsWidget";
 import ChartWidget from "./ChartWidget/ChartWidget";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const Dashboard = () => {
   const lang = useSelector((state) => state.language.lang);
@@ -25,7 +27,6 @@ const Dashboard = () => {
       return;
     }
 
-    console.log("test");
     const response = await fetch("http://localhost:4000/get_data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -38,22 +39,25 @@ const Dashboard = () => {
     setReview(data[shop].reviews);
     setOfferts(data[shop].offerts);
     setAdvices(data[shop].advices);
+    setIsLoading(false);
   };
 
-  useEffect(() => {
-    getData();
-
-    setIsLoading(false);
-  }, [shop]);
+  getData();
 
   return (
     <section className="w-screen  bg-[#F7F7F7] dark:bg-[#18191a]">
       <Nav lang={lang} setShop={setShop} />
-
+      {isLoading && (
+        <section className="flex h-[88vh] justify-center items-center">
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress />
+          </Box>
+        </section>
+      )}
       {!isLoading && (
         <>
           <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] md: flex-wrap xl:flex-nowrap">
-            <OrderWidget orders={orders} />
+            <OrderWidget orders={orders} isLoading={isLoading} />
             <QualityWidget userAspects={userAspects} />
           </article>
           <OffertsWidget offerts={offerts} />

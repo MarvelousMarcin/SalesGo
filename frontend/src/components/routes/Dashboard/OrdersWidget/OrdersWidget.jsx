@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
 
-const OrderWidget = ({ orders }) => {
+const OrderWidget = ({ orders, isLoading }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [notPaidCount, setNotPaidCount] = useState(0);
