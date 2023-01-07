@@ -1,26 +1,29 @@
 import star from "../../assets/star.png";
 
-const Review = ({ name, score, comment = "" }) => {
+const Review = ({ name, score, comment = "", keyId }) => {
   const starObj = {
-    1: [<img alt="start" src={star} />],
-    2: [<img alt="start" src={star} />, <img alt="fot" src={star} />],
+    1: [<img key={Math.random()} alt="start" src={star} />],
+    2: [
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="fot" src={star} />,
+    ],
     3: [
-      <img alt="start" src={star} />,
-      <img alt="fot" src={star} />,
-      <img alt="fot" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="fot" src={star} />,
+      <img key={Math.random()} alt="fot" src={star} />,
     ],
     4: [
-      <img alt="start" src={star} />,
-      <img alt="start" src={star} />,
-      <img alt="start" src={star} />,
-      <img alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
     ],
     5: [
-      <img alt="start" src={star} />,
-      <img alt="start" src={star} />,
-      <img alt="start" src={star} />,
-      <img alt="start" src={star} />,
-      <img alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
+      <img key={Math.random()} alt="start" src={star} />,
     ],
   };
 

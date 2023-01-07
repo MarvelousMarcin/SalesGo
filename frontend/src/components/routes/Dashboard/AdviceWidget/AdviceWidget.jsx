@@ -22,7 +22,10 @@ const AdviceWidget = ({ advices }) => {
       {advices && (
         <article className="flex flex-col justify-evenly items-center h-[100%]">
           {advices?.map((advice) => (
-            <Advice advice={dispatch(displayValue(advice))} />
+            <Advice
+              key={Math.random()}
+              advice={dispatch(displayValue(advice))}
+            />
           ))}
         </article>
       )}

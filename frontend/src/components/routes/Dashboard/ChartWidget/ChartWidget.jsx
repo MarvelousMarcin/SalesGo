@@ -140,8 +140,9 @@ const ChartWidget = ({ orders }) => {
         <article className="w-[15rem] flex items-center justify-evenly">
           <div
             className={
-              isBarGraph &&
-              "border-[3px] border-[#023E8A] w-[3rem] h-[3rem] flex items-center rounded-[50%] justify-center"
+              isBarGraph
+                ? "border-[3px] border-[#023E8A] w-[3rem] h-[3rem] flex items-center rounded-[50%] justify-center"
+                : ""
             }
           >
             <img

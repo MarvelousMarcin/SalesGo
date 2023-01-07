@@ -12,6 +12,7 @@ const QualityPage = () => {
       <img
         className="w-[2rem]"
         src={back}
+        alt="fot"
         onClick={() => navigate("/dashboard")}
       />
       <h1 className="text-3xl">{dispatch(displayValue("Quality"))}</h1>

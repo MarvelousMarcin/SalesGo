@@ -6,7 +6,6 @@ import OrderCategory from "./components/routes/Dashboard/OrdersWidget/OrderCateg
 import QualityPage from "./components/routes/Dashboard/QualityWidget/QualityPage";
 import ReviewPage from "./components/routes/Dashboard/ReviewWidget/ReviewPage";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 
 const App = () => {
   const isLogged = useSelector((state) => state.auth.isLogged);

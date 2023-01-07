@@ -29,6 +29,7 @@ const OrderCategory = () => {
       <img
         className="w-[2rem]"
         src={back}
+        alt="fot"
         onClick={() => navigate("/dashboard")}
       />
       <h1 className="text-3xl">{title}</h1>

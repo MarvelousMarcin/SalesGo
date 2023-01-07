@@ -55,11 +55,13 @@ const ReviewWidget = ({ review }) => {
           </div>
         )}
         {review &&
-          review?.map((item, count) => {
+          review?.map((item) => {
+            const keyId = Math.random();
             if (reviewType === "All" && reviews < 5) {
               reviews++;
               return (
                 <Review
+                  key={keyId}
                   score={item.score}
                   name={item.name}
                   comment={item.comment}
@@ -71,6 +73,7 @@ const ReviewWidget = ({ review }) => {
 
                 return (
                   <Review
+                    key={keyId}
                     score={item.score}
                     name={item.name}
                     comment={item.comment}
@@ -83,6 +86,7 @@ const ReviewWidget = ({ review }) => {
 
                 return (
                   <Review
+                    key={keyId}
                     score={item.score}
                     name={item.name}
                     comment={item.comment}
