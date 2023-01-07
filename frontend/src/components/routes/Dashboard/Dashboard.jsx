@@ -23,10 +23,6 @@ const Dashboard = () => {
   const [advices, setAdvices] = useState(null);
 
   const getData = async () => {
-    if (advices && review) {
-      return;
-    }
-
     const response = await fetch("http://localhost:4000/get_data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -42,7 +38,9 @@ const Dashboard = () => {
     setIsLoading(false);
   };
 
-  getData();
+  useEffect(() => {
+    getData();
+  }, [shop]);
 
   return (
     <section className="w-screen  bg-[#F7F7F7] dark:bg-[#18191a]">
