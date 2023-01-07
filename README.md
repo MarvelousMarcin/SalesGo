@@ -25,7 +25,11 @@
 
 [Zobacz UML](./readme/README_2.md)
 
-## 5. Użyte technologie
+## 5. Struktura implementacyjna
+
+[Zobacz UML](./readme/README_4.md)
+
+## 6. Użyte technologie
 
 <ol>
   <li><a href="https://reactjs.org/" target="_blank">React</a></li>
@@ -42,7 +46,7 @@
   <li><a href="https://www.mongodb.com/">MongoDB</a></li>
 </ol>
 
-## 6. Uruchomienie
+## 7. Uruchomienie
 
 > Pobierze repozytorium
 
@@ -84,7 +88,7 @@ backend: npm run dev
 frontend: npm start
 ```
 
-## 7. Logowanie
+## 8. Logowanie
 
 Jeżeli masz konto po prostu wpisz swój unikalny kod sprzedawcy.
 
@@ -96,7 +100,7 @@ Jeżeli podasz login osoby nieistiejącej, zostaniesz o tym poinformowany.
 
 ![alt text](./readme/error.png)
 
-## 8. Rejestracja
+## 9. Rejestracja
 
 Jeżeli konta nie masz możesz je zrobić. **Loginy nie mogą się powtarzać.**
 
@@ -104,19 +108,19 @@ Jeżeli konta nie masz możesz je zrobić. **Loginy nie mogą się powtarzać.**
 
 ![alt text](./readme/register.png)
 
-## 9. Strona Główna Dashboard
+## 10. Strona Główna Dashboard
 
 Po wpisaniu prawidłowego loginu, zostaniesz przeniesiony na swoją stronę główną ze wszystkimi najważniejszymi danymi dla sprzedawcy.
 
 ![alt text](./readme/dashboard.png)
 
-## 10. Widżet Zamówień
+## 11. Widżet Zamówień
 
 Widżet zamówień pokazuje trzy kategorie zamówień oraz liczbę takich zamówień w systemie. Mamy zamówienia nieopłacone, niedostarczone oraz zwrócone.
 
 ![alt text](./readme/orders.png)
 
-## 11. Widżet Jakości
+## 12. Widżet Jakości
 
 Widżet jakości pokazuję naszą ogólna ocenę jako sprzedawcy a wraz z nią jedną z 5 kategorii. Na ocenę składają się tzw. aspekty jakości z których wyliczana jest średnia - **końcowa ocena jakości**. Dodatkowo z prawej strony mamy zaprezentowane trzy aspekty w których wypadamy najgorzej.
 Dostępne kategorie do uzyskania:
@@ -135,19 +139,19 @@ Dostępne kategorie do uzyskania:
 
 ![alt text](./readme/quality2.png)
 
-## 12. Widżet Ofert
+## 13. Widżet Ofert
 
 Widżet ofert pokazuje nam 5 najbardzije popularnych lub najmniej popularnych ofert. Rodzaj sortownia możemy sobie ręcznie ustawić. Tabela prezentuje nam nazwę, zdjęcie, liczbę sprzedanych produktów oraz liczbę wyświetleń lub obrót oferty.
 
 ![alt text](./readme/offerts.gif)
 
-## 13. Widżet Opinii
+## 14. Widżet Opinii
 
 Widżet opinii prezentuje pięc opinii dotyczących sprzedawcy. Możemy wybrać filtrowanie opinii tylko pozytywnych, wszystkich lub tylko negatywnych.
 
 ![alt text](./readme/reviews.gif)
 
-## 14. Widżet Wykresu Sprzedaży
+## 15. Widżet Wykresu Sprzedaży
 
 Wykres sprzedaży pokazuje nam statystykę odnośnie naszych zamówień. Możemy go parametryzować przy użyciu opcji.
 
@@ -157,24 +161,24 @@ Wykres sprzedaży pokazuje nam statystykę odnośnie naszych zamówień. Możemy
 
 > **Wybrać typ wykresu - Słupkowy lub liniowy** ![alt text](./readme/type.gif)
 
-## 15. Widżet Porad Sprzedażowych
+## 16. Widżet Porad Sprzedażowych
 
 W wydżecie możemy znaleźć porady dotyczące naszych działań, generowane automatycznie bazując na naszych ofertach oraz zamówieniach.
 
 ![alt text](./readme/advices.png)
 
-## 16. Dark Mode
+## 17. Dark Mode
 
 ### Włączanie Dark Mode
 
 ![alt text](./readme/darkmode.gif)
 
-## 17. Zmiana języka
+## 18. Zmiana języka
 
 ### Zmiana języka na polski
 
 ![alt text](./readme/lang.gif)
 
-## 18. Zmiana sklepu
+## 19. Zmiana sklepu
 
 ![alt text](./readme/shop.gif)
