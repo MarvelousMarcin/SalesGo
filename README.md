@@ -74,11 +74,12 @@
   npm i
 ```
 
-> Aby backend działał prawidłowo musisz też dodać plik .env odpowiedną zawartością >
+> Aby backend działał prawidłowo musisz też dodać plik .env odpowiedną zawartością. Wartość portu, przykładowy jwt oraz read/write user do bazy.
 
 ```
 PORT=4000
 JWT_TOKEN="super_secret_code"
+MONGODB_URL="mongodb+srv://user:user@cluster0.oytzq.mongodb.net/SalesGo"
 ```
 
 > Musisz uruchomić teraz frontend i backend
