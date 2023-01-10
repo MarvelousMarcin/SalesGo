@@ -30,12 +30,16 @@ const Dashboard = () => {
     });
     const data = await response.json();
 
-    setUserAspects(data[shop].aspects);
-    setOrders(data[shop].orders);
-    setReview(data[shop].reviews);
-    setOfferts(data[shop].offerts);
-    setAdvices(data[shop].advices);
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    if (data) {
+      setUserAspects(data[shop].aspects);
+      setOrders(data[shop].orders);
+      setReview(data[shop].reviews);
+      setOfferts(data[shop].offerts);
+      setAdvices(data[shop].advices);
+    }
   };
 
   useEffect(() => {
