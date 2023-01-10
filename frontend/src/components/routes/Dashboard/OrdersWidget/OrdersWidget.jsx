@@ -33,7 +33,7 @@ const OrderWidget = ({ orders, isLoading }) => {
   }, [orders]);
 
   return (
-    <section className="bg-[white] w-[100%] p-[2rem]  rounded-md dark:bg-[#242526] md:w-[35%]">
+    <section className="bg-[white] w-[100%] p-[2rem] shadow-md rounded-md dark:bg-[#242526] md:w-[35%]">
       <h1 className="text-3xl font-bold dark:text-[white]">
         {dispatch(displayValue("Orders"))}
       </h1>

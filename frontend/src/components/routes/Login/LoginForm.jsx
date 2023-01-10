@@ -44,10 +44,14 @@ const LoginForm = () => {
       </article>
       <div className="min-h-[2rem] text-center text-[red]">{errMsg}</div>
       <Button caption={"Enter"} register={true} errorMsg={errMsg} />
-      <h3>
+      <h3 className="flex">
         Don't have salesman id?
-        <span className="font-bold text-[#023E8A]">
-          <Link to="/register"> Create it now</Link>
+        <span className="font-bold text-[#023E8A] ">
+          <Link to="/register">
+            <motion.div className="ml-2" whileHover={{ scale: 1.03 }}>
+              Create it now
+            </motion.div>
+          </Link>
         </span>
       </h3>
     </form>

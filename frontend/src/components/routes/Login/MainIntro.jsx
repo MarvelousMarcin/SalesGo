@@ -17,7 +17,7 @@ const MainIntro = ({ className }) => {
         src={manFot}
         alt="foto"
       />
-      <h1 className="text-5xl w-3/5 font-bold text-[white] text-center">
+      <h1 className="text-6xl w-4/5 font-bold text-[white] text-center">
         Control your finance in best possible way
       </h1>
     </section>

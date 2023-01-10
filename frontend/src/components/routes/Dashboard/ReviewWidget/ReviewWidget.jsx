@@ -15,7 +15,7 @@ const ReviewWidget = ({ review }) => {
   const navigate = useNavigate();
 
   return (
-    <section className="w-[100%]  bg-[white] rounded-md p-[2rem] dark:bg-[#242526] dark:text-[white] md:w-[60%]">
+    <section className="w-[100%] shadow-md  bg-[white] rounded-md p-[2rem] dark:bg-[#242526] dark:text-[white] md:w-[60%]">
       <article className="flex items-center mb-[2rem]">
         <motion.h1
           whileHover={{

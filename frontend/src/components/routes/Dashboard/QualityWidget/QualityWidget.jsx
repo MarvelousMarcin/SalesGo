@@ -26,7 +26,7 @@ const QualityWidget = ({ userAspects }) => {
   };
 
   return (
-    <section className="bg-[white] w-[100%]  rounded-md p-[2rem] dark:bg-[#242526] md:w-[65%]">
+    <section className="bg-[white] w-[100%] shadow-md  rounded-md p-[2rem] dark:bg-[#242526] md:w-[65%]">
       <motion.h1
         whileHover={{
           x: 10,

@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const lang = useSelector((state) => state.language.lang);
@@ -58,17 +59,23 @@ const Dashboard = () => {
       )}
       {!isLoading && (
         <>
-          <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] md: flex-wrap xl:flex-nowrap">
+          <motion.article
+            animate={{ opacity: [0, 1] }}
+            className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] md: flex-wrap xl:flex-nowrap"
+          >
             <OrderWidget orders={orders} isLoading={isLoading} />
             <QualityWidget userAspects={userAspects} />
-          </article>
+          </motion.article>
           <OffertsWidget offerts={offerts} />
-          <article className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] mr-[1vw] mt-[1rem] flex-wrap md:flex-nowrap">
+          <motion.article
+            animate={{ opacity: [0, 1] }}
+            className="flex flex-row gap-[1vw] w-[98vw] justify-center ml-[1vw] mr-[1vw] mt-[1rem] flex-wrap md:flex-nowrap"
+          >
             <ReviewWidget review={review} />
-            <div className="bg-[white] rounded-md w-[40%]  flex justify-center items-center dark:bg-[#242526]">
-              <img alt="fot" className="" src={manFot} />
+            <div className="bg-[white] rounded-md w-[40%] shadow-md  flex justify-center items-center dark:bg-[#242526]">
+              <img alt="fot" src={manFot} />
             </div>
-          </article>
+          </motion.article>
           <ChartWidget orders={orders} />
           <AdviceWidget advices={advices} />
         </>

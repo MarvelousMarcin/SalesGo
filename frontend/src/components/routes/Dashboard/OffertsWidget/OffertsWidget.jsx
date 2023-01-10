@@ -12,6 +12,7 @@ import { displayValue } from "../../../../store/languageSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const OffertsWidget = ({ offerts }) => {
   const dispatch = useDispatch();
@@ -25,7 +26,10 @@ const OffertsWidget = ({ offerts }) => {
   }, [offerts]);
 
   return (
-    <section className="w-[98vw] rounded-md p-[2rem] h-[50rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white] dark:bg-[#242526]">
+    <motion.section
+      animate={{ opacity: [0, 1] }}
+      className="w-[98vw] rounded-md p-[2rem] shadow-md h-[50rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] bg-[white] dark:bg-[#242526]"
+    >
       <article className="flex flex-row items-center">
         <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
           {dispatch(displayValue("Offerts"))}
@@ -63,7 +67,7 @@ const OffertsWidget = ({ offerts }) => {
         </div>
       )}
       {offerts && (
-        <article className="flex items-center justify-center h-[90%]">
+        <motion.article className="flex items-center justify-center h-[90%]">
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 750 }} aria-label="simple table">
               <TableHead>
@@ -107,7 +111,7 @@ const OffertsWidget = ({ offerts }) => {
                       scope="row"
                       align="left"
                     >
-                      {row.name}
+                      <div className="font-bold">{row.name}</div>
                     </TableCell>
                     <TableCell
                       className="dark:bg-[#242526] dark:text-[white] flex"
@@ -141,9 +145,9 @@ const OffertsWidget = ({ offerts }) => {
               </TableBody>
             </Table>
           </TableContainer>
-        </article>
+        </motion.article>
       )}
-    </section>
+    </motion.section>
   );
 };
 

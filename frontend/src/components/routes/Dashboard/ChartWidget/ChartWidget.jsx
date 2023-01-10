@@ -113,7 +113,7 @@ const ChartWidget = ({ orders }) => {
   };
 
   return (
-    <section className="w-[98vw] rounded-md p-[2rem] h-[55rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] dark:bg-[#242526] bg-[white]">
+    <section className="w-[98vw] rounded-md shadow-md p-[2rem] h-[55rem] justify-center ml-[1vw] mr-[1vw] mt-[1rem] dark:bg-[#242526] bg-[white]">
       <article className="flex flex-row items-center">
         <h1 className="text-3xl font-bold mr-[2rem] dark:text-[white]">
           {dispatch(displayValue("Chart"))}
