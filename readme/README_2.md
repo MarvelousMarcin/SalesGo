@@ -4,13 +4,13 @@
 
 ![alt text](./zdarzen.png)
 
-![alt text](./scenariusz_biznesowy.png)
+![alt text](./biznesowy.png)
 
 ![alt text](./uc.png)
 
-![alt text](./scenariusz_przypadku.png)
+![alt text](./scenariusz_use_case.png)
 
-![alt text](./func2.png)
+![alt text](./scenariusz_use_case_2.png)
 
 ![alt text](./obiekty.png)
 
