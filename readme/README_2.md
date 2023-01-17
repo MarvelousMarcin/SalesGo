@@ -15,6 +15,6 @@
 ![alt text](./obiekty.png)
 
 ![alt text](./abst2.png)
-![alt text](./absr.png)
+![alt text](./absr_inter.png)
 
 ![alt text](./sekwenc.png)
